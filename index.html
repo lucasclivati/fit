@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="files/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+    <title>fit</title>
+</head>
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid ms-5 me-5">
+      <a class="navbar-brand ml" href="index.html">
+        <img src="files/logo.png" alt="Logo Fit" height="70"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenudrop">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-sm-end m-1" id="navmenudrop">
+        <ul class="navbar-nav float-end my-2">
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html"><button class="btn btn-outline-secondary" type="button">Cadastre-se</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html"><button class="btn btn-outline-secondary" type="button">Sobre a Fit</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="planos.html"><button class="btn btn-outline-secondary" type="button">Planos</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="meustreinos.html"><button class="btn btn-primary" type="button">Meus Treinos</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<main>
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="files/dogefull.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="200" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Cansado de treinos em planilhas ou apps ruins?</h1>
+            <p class="lead">O Fit é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus resultados. FREE!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Meus Treinos</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <hr>
+      </div>
+      
+      <div class="container">
+        <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Como funciona?</h1>
+        <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
+        <div class="d-flex justify-content-center">
+            <ul class="list-group list-group-flush">
+                <li class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/1-square-fill.svg"></img>Escolha a quantidade de treinos semanais</li>
+                <li class="d-flex list-group-item mb-2 lead "><img src="node_modules/bootstrap-icons/icons/2-square-fill.svg"></img>Adicione seus exercícios aos treinos</li>
+                <li class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/3-square-fill.svg"></img>Confira seus exercícios durante os treinos</li>
+                <li class="d-flex list-group-item mb-2 lead "><img src="node_modules/bootstrap-icons/icons/4-square-fill.svg"></img> Monitore seu desempenho</li>
+                <li class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/5-square-fill.svg"></img> Compartilhe seus resultados</li>
+            </ul>
+        </div>
+      </div>
+    </main>
+    <body>
+      <div class="container">
+        <hr>
+      </div>
+
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Cadastre-se agora!</h1>
+            <p class="col-lg-10 fs-4">É de graça parar você controlar seu treino e monitorar seus resultados. Queremos você fit agora!</p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-light">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" required maxlength="100" placeholder="nome@dominio.com">
+                <label for="floatingInput">E-mail</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" required placeholder="SenhaSegura">
+                <label for="floatingPassword">Senha</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="phone" class="form-control" id="phone" required maxlength="15" placeholder="(dd) 98765-4321">
+                <label for="phone">Telefone</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Lembrar-me
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar!</button>
+              <hr class="mt-3 mb-2">
+              <small class="text-muted">Relaxa, não vamos mandar spam, só treinos.</small>
+            </form>
+            <div class="container my-3 bg-light border rounded-3">
+                <div class="my-2 d-flex justify-content-center">
+                    <small class="text-muted">Cadastre-se também com sua conta:</small>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2">Google</button>
+                <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2">Facebook</button>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+    </body>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-1 my-1 border-top">
+        <div class="col justify-content-start">
+            <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastre-se</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Fit</a></li>
+            <li class="nav-item"><a class="nav-link" href="planos.html">Planos</a></li>
+            <li class="nav-item"><a class="nav-link" href="meustreinos.html">Meus Treinos</a></li>
+            </ul>
+        </div>
+        <div class="col text-center">
+            <a href="index.php" class="col me-md-auto"><img src="files/logo.png" alt="Logo CSGO News" height="45" ></a>
+        </div>
+        <div class="col text-end">
+            <a href="https://github.com/lucasclivati" class="text-decoration-none"><p>&copy; 2023 Lucas Clivati</p></a>
+            <a href="https://github.com/vmarega" class="text-decoration-none"><p>&copy; 2023 Vinicius Marega</p></a>
+        </div>
+        </footer>
+    </div>    
+</html>
+<script>
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('indexblue'),
+      path: 'files/indexblue.json',
+      render: 'svg',
+      loop:true,
+      autoplay: true,
+      name: 'demo animation'
+    });
+  </script>
