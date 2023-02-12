@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="files/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="style.css">
+    <title>fit</title>
+    <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
+    <script src="node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
+</head>
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid ms-5 me-5">
+      <a class="navbar-brand ml" href="index.html">
+        <img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenudrop">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-sm-end m-1" id="navmenudrop">
+        <ul class="navbar-nav float-end my-2">
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html"><button class="btn btn-outline-secondary" type="button">Cadastre-se</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html"><button class="btn btn-outline-secondary" type="button">Sobre a Fit</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="planos.html"><button class="btn btn-outline-secondary" type="button">Planos</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="meustreinos.html"><button class="btn btn-primary" type="button">Meus Treinos</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+        <lottie-player
+        id="deadbug"
+        src="/files/jsonanimations/deadbug.json"
+        style="width: 400px"
+        >
+        </lottie-player>
+        <script>
+        LottieInteractivity.create({
+            player:'#deadbug',
+            mode:"scroll",
+            actions: [
+                {
+                visibility: [0.25, 1.0],
+                type: "loop",
+                frames: []
+                }
+            ]
+        });
+        </script>
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-1 my-1 border-top">
+    <div class="col justify-content-start">
+        <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastre-se</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Fit</a></li>
+        <li class="nav-item"><a class="nav-link" href="planos.html">Planos</a></li>
+        <li class="nav-item"><a class="nav-link" href="meustreinos.html">Meus Treinos</a></li>
+        </ul>
+    </div>
+    <div class="col text-center">
+        <a href="index.php" class="col me-md-auto"><img src="files/imgs/logo.png" alt="Logo CSGO News" height="45" ></a>
+    </div>
+    <div class="col text-end">
+        <a href="https://github.com/lucasclivati" class="text-decoration-none"><p>&copy; 2023 Lucas Clivati</p></a>
+        <a href="https://github.com/vmarega" class="text-decoration-none"><p>&copy; 2023 Vinicius Marega</p></a>
+    </div>
+    </footer>
+</div>    

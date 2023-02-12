@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
     <title>fit</title>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
+    <script src="node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
+    <script src="node_modules/@rive-app/canvas/rive.js"></script>
 </head>
 <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid ms-5 me-5">
       <a class="navbar-brand ml" href="index.html">
-        <img src="files/logo.png" alt="Logo Fit" height="70"></a>
+        <img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenudrop">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,14 +41,16 @@
     <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
-            <img src="files/dogefull.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="200" loading="lazy">
+            <canvas id="canvas" width="500" height="500"></canvas>
+            <button class="btn btn-primary" id="ambos">Elevação Lateral</button>
+            <button class="btn btn-primary" id="unilateral">Unilateral</button>
           </div>
           <div class="col-lg-6">
             <h1 class="display-4 fw-bold lh-1 mb-3">Cansado de treinos em planilhas ou apps ruins?</h1>
             <p class="lead">O Fit é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus resultados. FREE!</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Meus Treinos</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Cadastre-se</button>
             </div>
           </div>
         </div>
@@ -56,29 +58,44 @@
       <div class="container">
         <hr>
       </div>
-      
       <div class="container">
         <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Como funciona?</h1>
         <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
-                <div id="gif">
-                </div>
+              <lottie-player
+              id="deadbug"
+              src="/files/jsonanimations/deadbug.json"
+              style="width: 400px"
+              >
+              </lottie-player>
+              <script>
+              LottieInteractivity.create({
+                  player:'#deadbug',
+                  mode:"scroll",
+                  actions: [
+                      {
+                      visibility: [0.25, 1.0],
+                      type: "loop",
+                      frames: []
+                      }
+                  ]
+              });
+              </script>
             </div>
-        <div class="row col-lg-6">
-                <div class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/1-square-fill.svg"></img>Escolha a quantidade de treinos semanais</div>
-                <div class="d-flex list-group-item mb-2 lead "><img src="node_modules/bootstrap-icons/icons/2-square-fill.svg"></img>Adicione seus exercícios aos treinos</div>
-                <div class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/3-square-fill.svg"></img>Confira seus exercícios durante os treinos</div>
-                <div class="d-flex list-group-item mb-2 lead "><img src="node_modules/bootstrap-icons/icons/4-square-fill.svg"></img> Monitore seu desempenho</div>
-                <div class="d-flex list-group-item mb-2 lead fw-medium"><img src="node_modules/bootstrap-icons/icons/5-square-fill.svg"></img> Compartilhe seus resultados</div>
-        </div>
+            <div class="row col-lg-6">
+                    <div class="d-flex list-group-item mb-2 lead fw-medium"><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/1-square-fill.svg"></img> Escolha a quantidade de treinos semanais</div>
+                    <div class="d-flex list-group-item mb-2 lead "><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/2-square-fill.svg"></img>Adicione seus exercícios aos treinos</div>
+                    <div class="d-flex list-group-item mb-2 lead fw-medium"><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/3-square-fill.svg"></img>Confira seus exercícios durante os treinos</div>
+                    <div class="d-flex list-group-item mb-2 lead "><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/4-square-fill.svg"></img> Monitore seu desempenho</div>
+                    <div class="d-flex list-group-item mb-2 lead fw-medium"><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/5-square-fill.svg"></img> Compartilhe seus resultados</div>
+            </div>
       </div>
     </main>
     <body>
       <div class="container">
         <hr>
       </div>
-
       <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
           <div class="col-lg-7 text-center text-lg-start">
@@ -133,7 +150,7 @@
             </ul>
         </div>
         <div class="col text-center">
-            <a href="index.php" class="col me-md-auto"><img src="files/logo.png" alt="Logo CSGO News" height="45" ></a>
+            <a href="index.php" class="col me-md-auto"><img src="files/imgs/logo.png" alt="Logo CSGO News" height="45" ></a>
         </div>
         <div class="col text-end">
             <a href="https://github.com/lucasclivati" class="text-decoration-none"><p>&copy; 2023 Lucas Clivati</p></a>
@@ -143,12 +160,28 @@
     </div>    
 </html>
 <script>
-    var animation = bodymovin.loadAnimation({
-      container: document.getElementById('gif'),
-      path: 'files/indexblue.json',
-      render: 'svg',
-      loop:true,
+  const btnUnilateral = document.getElementById('unilateral');
+  const btnAmbos = document.getElementById('ambos');
+
+  const r = new rive.Rive({
+      src: "/files/rivanimations/fit.riv",
+      canvas: document.getElementById('canvas'),
       autoplay: true,
-      name: 'demo animation'
-    });
-  </script>
+      stateMachines: 'State Machine 1',
+      fit: rive.Fit.cover,
+      onLoad: (_) => {
+                const inputs = r.stateMachineInputs('State Machine 1');
+                const bumpAmbos = inputs.find(i => i.name === 'triggerAmbos');
+                bumpAmbos.fire()
+                btnAmbos.onclick = (e) => {
+                    e.preventDefault();
+                    bumpAmbos.fire()
+                };
+                const bumpUnilateral = inputs.find(i => i.name === 'triggerUnilateral');
+                btnUnilateral.onclick = (e) => {
+                    e.preventDefault();
+                    bumpUnilateral.fire()
+                };
+            },
+  });
+</script>
