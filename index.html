@@ -44,6 +44,7 @@
             <canvas id="canvas" width="500" height="500"></canvas>
             <button class="btn btn-primary" id="ambos">Elevação Lateral</button>
             <button class="btn btn-primary" id="unilateral">Unilateral</button>
+            <button class="btn btn-primary" id="elevacaoFrontal">Elevação Frontal</button>
           </div>
           <div class="col-lg-6">
             <h1 class="display-4 fw-bold lh-1 mb-3">Cansado de treinos em planilhas ou apps ruins?</h1>
@@ -162,15 +163,16 @@
 <script>
   const btnUnilateral = document.getElementById('unilateral');
   const btnAmbos = document.getElementById('ambos');
+  const btnElevacaoFrontal = document.getElementById('elevacaoFrontal'); 
 
   const r = new rive.Rive({
       src: "/files/rivanimations/shoulders.riv",
       canvas: document.getElementById('canvas'),
       autoplay: true,
-      stateMachines: 'State Machine 1',
+      stateMachines: ['StateElevacaoLateral', 'StateElevacaoFrontal'],
       fit: rive.Fit.cover,
       onLoad: (_) => {
-                const inputs = r.stateMachineInputs('State Machine 1');
+                const inputs = r.stateMachineInputs('StateElevacaoLateral', 'StateElevacaoFrontal');
                 const bumpAmbos = inputs.find(i => i.name === 'triggerAmbos');
                 bumpAmbos.fire()
                 btnAmbos.onclick = (e) => {
@@ -181,6 +183,11 @@
                 btnUnilateral.onclick = (e) => {
                     e.preventDefault();
                     bumpUnilateral.fire()
+                };
+                const bumpFrontal = inputs.find(i => i.name === 'TriggerElevacaoFrontal');
+                btnElevacaoFrontal.onclick = (e) => {
+                    e.preventDefault();
+                    bumpFrontal.fire()
                 };
             },
   });
