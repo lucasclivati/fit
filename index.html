@@ -169,10 +169,10 @@
       src: "/files/rivanimations/shoulders.riv",
       canvas: document.getElementById('canvas'),
       autoplay: true,
-      stateMachines: ['StateElevacaoLateral', 'StateElevacaoFrontal'],
+      stateMachines: 'StateOmbro',
       fit: rive.Fit.cover,
       onLoad: (_) => {
-                const inputs = r.stateMachineInputs('StateElevacaoLateral', 'StateElevacaoFrontal');
+                const inputs = r.stateMachineInputs('StateOmbro');
                 const bumpAmbos = inputs.find(i => i.name === 'triggerAmbos');
                 bumpAmbos.fire()
                 btnAmbos.onclick = (e) => {
@@ -184,7 +184,7 @@
                     e.preventDefault();
                     bumpUnilateral.fire()
                 };
-                const bumpFrontal = inputs.find(i => i.name === 'TriggerElevacaoFrontal');
+                const bumpFrontal = inputs.find(i => i.name === 'triggerFrontal');
                 btnElevacaoFrontal.onclick = (e) => {
                     e.preventDefault();
                     bumpFrontal.fire()
