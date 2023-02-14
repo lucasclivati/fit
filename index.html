@@ -7,31 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="files/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <title>fit</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Vlapp</title>
   <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
   <script src="node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
   <script src="node_modules/@rive-app/canvas/rive.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    #heroInicial {
-      margin-top: 120px;
-    }
-
-    #heroSecundario {
-      margin-top: 120px;
-    }
-  </style>
+  <script src=""></script>
 </head>
 <nav class="navbar navbar-expand-md bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
+    <h1 class="logo ms-5">Vlapp</h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
       aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Fit</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Vlapp</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body justify-content-end">
@@ -42,7 +35,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sobre.html"><button class="btn btn-lg btn-outline-secondary" type="button">Sobre a
-                Fit</button></a>
+                Vlapp</button></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="planos.html"><button class="btn btn-lg btn-outline-secondary"
@@ -61,10 +54,10 @@
   <div class="px-4 py-5 text-center mb-5" id="heroInicial">
     <h1 class="display-5 fw-bold mt-5 mb-5 mx-auto">Cansado de treinos em planilhas ou apps ruins?</h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-5">O Fit é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus
+      <p class="lead mb-5">O Vlapp é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus
         resultados. FREE!</p>
       <div class="d-grid gap-2 mx-auto d-md-flex justify-content-md-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Cadastre-se</button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Montar novo Treino</button>
         <button type="button" class="btn btn-outline-secondary btn-lg px-4">Meus Treinos</button>
       </div>
     </div>
@@ -125,7 +118,7 @@
     </div>
     <div class="text-center my-5 bg-body-tertiary border rounded">
       <div class="pt-4">
-        <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Teste agora!</h1>
+        <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center logo">Teste agora!</h1>
       </div>
       <div class="col-6 col-md-12 col-sm-12">
         <canvas id="canvas" width="450" height="450">
@@ -153,8 +146,12 @@
               <div class="input-group input-group-lg justify-content-center">
                 <input type="text" class="rounded-start" placeholder="Insira a carga de hoje" aria-label="Recipient's username with two button addons">
                 <span class="input-group-text"> em Kg</span>
-                <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off"><label
-                  class="btn btn-lg btn-outline-success" for="btn-check2">Salvar Exercício</label>
+                <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label
+                  class="btn btn-lg btn-outline-success" for="btn-check1">Salvar Exercício</label>
+              </div>
+              <div class="input-group input-group-md justify-content-center mt-3">
+                <button class="btn btn-warning rounded-start">Deixar p/ fim do treino</button>
+                <button class="btn btn-danger">Matar Exercício</button>
               </div>
             </div>
           </div>
@@ -178,8 +175,12 @@
               <div class="input-group input-group-lg justify-content-center">
                 <input type="text" class="rounded-start" placeholder="Insira a carga de hoje" aria-label="Recipient's username with two button addons">
                 <span class="input-group-text"> em Kg</span>
-                <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off"><label
-                  class="btn btn-lg btn-outline-success" for="btn-check3">Salvar Exercício</label>
+                <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off"><label
+                  class="btn btn-lg btn-outline-success" for="btn-check2">Salvar Exercício</label>
+              </div>
+              <div class="input-group input-group-md justify-content-center mt-3">
+                <button class="btn btn-warning rounded-start">Deixar p/ fim do treino</button>
+                <button class="btn btn-danger">Matar Exercício</button>
               </div>
             </div>
           </div>
@@ -203,8 +204,12 @@
               <div class="input-group input-group-lg justify-content-center">
                 <input type="text" class="rounded-start" placeholder="Insira a carga de hoje" aria-label="Recipient's username with two button addons">
                 <span class="input-group-text"> em Kg</span>
-                <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label
-                  class="btn btn-lg btn-outline-success" for="btn-check1">Salvar Exercício</label>
+                <input type="checkbox" class="btn-check" id="btn-check30" autocomplete="off"><label
+                  class="btn btn-lg btn-outline-success" for="btn-check30">Salvar Exercício</label>
+              </div>
+              <div class="input-group input-group-md justify-content-center mt-3">
+                <button class="btn btn-warning rounded-start">Deixar p/ fim do treino</button>
+                <button class="btn btn-danger">Matar Exercício</button>
               </div>
             </div>
           </div>
@@ -269,13 +274,13 @@
     <div class="col justify-content-start">
       <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastre-se</a></li>
-        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Fit</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Vlapp</a></li>
         <li class="nav-item"><a class="nav-link" href="planos.html">Planos</a></li>
         <li class="nav-item"><a class="nav-link" href="meustreinos.html">Meus Treinos</a></li>
       </ul>
     </div>
     <div class="col text-center">
-      <a href="index.php" class="col me-md-auto"><img src="files/imgs/logo.png" alt="Logo CSGO News" height="45"></a>
+      <h1 class="logo">Vlapp</h1>
     </div>
     <div class="col text-end">
       <a href="https://github.com/lucasclivati" class="text-decoration-none">

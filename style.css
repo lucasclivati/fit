@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'gd_boingbold';
+    src: url('files/fonts/gd-boing-bold-webfont.woff2') format('woff2'),
+         url('files/fonts/gd-boing-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.logo{
+    font-family: 'gd_boingbold', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    color: #007bff;
+}
+
+#heroInicial {
+    margin-top: 120px;
+  }
+
+#heroSecundario {
+    margin-top: 120px;
+  }
