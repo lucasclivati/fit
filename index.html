@@ -15,6 +15,9 @@
       #heroInicial{
         margin-top: 120px;
       }
+      #heroSecundario{
+        margin-top: 120px;
+      }
     </style>
 </head>
 <!-- DEIXEI AQUI O MENU ANTIGO, CASO NÃO GOSTE DO NOVO COM OFFCANVAS
@@ -83,48 +86,7 @@
         </div>
       </div>
     </div>
-
-    <div class="text-center my-5 bg-body-tertiary">
-      <div class="pt-4">
-        <h1 class="text-secondary">Veja como é funciona!</h1>
-      </div>
-      <div class="col-6 col-md-12 col-sm-12">
-        <canvas id="canvas" width="450" height="450">
-        </canvas>
-        <p class="text-secondary">Selecione <strong>Elevação Lateral</strong> ou <strong>Elevação Frontal</strong> e veja o boneco na prática!</p>
-      </div>
-      <div class="container justify-content-center">
-        <div class="input-group mb-3">
-          <label class="col-3 btn btn-lg btn-outline-secondary active">
-            <input type="radio" name="options" id="ambos" autocomplete="off" checked> Elevação Lateral
-          </label>
-          <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check1">Marcar Feito</label>
-          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
-          <p class="lead m-2">Última carga: 5kg em 01/02/2023</p>
-        </div>
-        <div class="input-group mb-3">
-          <label class="col-3 btn btn-lg btn-outline-secondary">
-            <input type="radio" name="options" id="unilateral" autocomplete="off"> Elevação Lateral
-          </label>
-          <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check2">Marcar Feito</label>
-          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
-          <p class="lead m-2">Última carga: 7kg em 01/02/2023</p>
-        </div>
-        <div class="input-group mb-3">
-          <label class="col-3 btn btn-lg btn-outline-secondary">
-            <input type="radio" name="options" id="elevacaoFrontal" autocomplete="off"> Elevação Frontal
-          </label>
-          <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check3">Marcar Feito</label>
-          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
-          <p class="lead m-2">Última carga: 6kg em 01/02/2023</p>
-        </div>
-      </div>
-      <div class="d-grid gap-2 mx-auto d-md-flex justify-content-md-center mb-5">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Salvar Treino</button>
-      </div>
-
-
-      <div class="container">
+      <div class="container" id="heroSecundario">
         <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Como funciona?</h1>
         <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -157,6 +119,42 @@
                     <div class="d-flex list-group-item mb-2 lead fw-medium"><img style="height: 35px;" src="node_modules/bootstrap-icons/icons/5-square-fill.svg"></img> Compartilhe seus resultados</div>
             </div>
       </div>
+      <div class="text-center my-5 bg-body-tertiary border rounded">
+        <div class="pt-4">
+          <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Teste agora!</h1>
+        </div>
+        <div class="col-6 col-md-12 col-sm-12">
+          <canvas id="canvas" width="450" height="450">
+          </canvas>
+          <p class="text-secondary">Selecione <strong>Elevação Frontal</strong> ou <strong>Elevação Unilateral</strong> e veja seu avatar te auxiliar!</p>
+        </div>
+          <div class="input-group mb-3">
+            <label class="col-3 btn btn-lg btn-outline-secondary active">
+              <input type="radio" name="options" id="ambos" autocomplete="off" checked> Elevação Lateral
+            </label>
+            <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check1">Marcar Feito</label>
+            <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+            <p class="lead m-2">Última carga: 5kg em 01/02/2023</p>
+          </div>
+          <div class="input-group mb-3">
+            <label class="col-3 btn btn-lg btn-outline-secondary">
+              <input type="radio" name="options" id="elevacaoFrontal" autocomplete="off"> Elevação Frontal
+            </label>
+            <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check3">Marcar Feito</label>
+            <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+            <p class="lead m-2">Última carga: 6kg em 01/02/2023</p>
+          </div>
+          <div class="input-group mb-3">
+            <label class="col-3 btn btn-lg btn-outline-secondary">
+              <input type="radio" name="options" id="unilateral" autocomplete="off"> Elevação Lateral
+            </label>
+            <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check2">Marcar Feito</label>
+            <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+            <p class="lead m-2">Última carga: 7kg em 01/02/2023</p>
+          </div>
+        <div class="d-grid gap-2 mx-auto d-md-flex justify-content-md-center my-4">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 mb-2">Salvar Treino</button>
+        </div>
     </main>
     <body>
       <div class="container">
