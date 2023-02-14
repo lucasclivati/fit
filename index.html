@@ -6,59 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="files/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
     <title>fit</title>
     <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
     <script src="node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
     <script src="node_modules/@rive-app/canvas/rive.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      #heroInicial{
+        margin-top: 120px;
+      }
+    </style>
 </head>
-<nav class="navbar navbar-expand-sm navbar-dark">
-    <div class="container-fluid ms-5 me-5">
-      <a class="navbar-brand ml" href="index.html">
-        <img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenudrop">
+<!-- DEIXEI AQUI O MENU ANTIGO, CASO NÃO GOSTE DO NOVO COM OFFCANVAS
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <div class="container-fluid ms-5 me-4">
+    <a class="navbar-brand" href="index.html"><img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-sm-end m-1" id="navmenudrop">
-        <ul class="navbar-nav float-end my-2">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav my-2">
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro.html"><button class="btn btn-outline-secondary" type="button">Cadastre-se</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html"><button class="btn btn-outline-secondary" type="button">Sobre a Fit</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="planos.html"><button class="btn btn-outline-secondary" type="button">Planos</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="meustreinos.html"><button class="btn btn-primary" type="button">Meus Treinos</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="files/imgs/logo.png" alt="Logo Fit" height="70"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Fit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body justify-content-end">
+        <ul class="navbar-nav my-2">
           <li class="nav-item">
-            <a class="nav-link" href="cadastro.html"><button class="btn btn-outline-secondary" type="button">Cadastre-se</button></a>
+            <a class="nav-link" href="cadastro.html"><button class="btn btn-lg btn-outline-secondary" type="button">Cadastre-se</button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sobre.html"><button class="btn btn-outline-secondary" type="button">Sobre a Fit</button></a>
+            <a class="nav-link" href="sobre.html"><button class="btn btn-lg btn-outline-secondary" type="button">Sobre a Fit</button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="planos.html"><button class="btn btn-outline-secondary" type="button">Planos</button></a>
+            <a class="nav-link" href="planos.html"><button class="btn btn-lg btn-outline-secondary" type="button">Planos</button></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="meustreinos.html"><button class="btn btn-primary" type="button">Meus Treinos</button></a>
+            <a class="nav-link" href="meustreinos.html"><button class="btn btn-lg btn-primary" type="button">Meus Treinos</button></a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 <main>
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <canvas id="canvas" width="500" height="500"></canvas>
-            <button class="btn btn-primary" id="ambos">Elevação Lateral</button>
-            <button class="btn btn-primary" id="unilateral">Unilateral</button>
-            <button class="btn btn-primary" id="elevacaoFrontal">Elevação Frontal</button>
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Cansado de treinos em planilhas ou apps ruins?</h1>
-            <p class="lead">O Fit é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus resultados. FREE!</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Meus Treinos</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Cadastre-se</button>
-            </div>
-          </div>
+    <div class="px-4 py-5 text-center mb-5" id="heroInicial">
+      <h1 class="display-5 fw-bold mt-5 mb-5 mx-auto">Cansado de treinos em planilhas ou apps ruins?</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-5">O Fit é SIMPLES, RÁPIDO e PRÁTICO para o seu treino. Organize seu treino. Acompanhe seus resultados. FREE!</p>
+        <div class="d-grid gap-2 mx-auto d-md-flex justify-content-md-center">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Cadastre-se</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Meus Treinos</button>
         </div>
       </div>
-      <div class="container">
-        <hr>
+    </div>
+
+    <div class="text-center my-5 bg-body-tertiary">
+      <div class="pt-4">
+        <h1 class="text-secondary">Veja como é funciona!</h1>
       </div>
+      <div class="col-6 col-md-12 col-sm-12">
+        <canvas id="canvas" width="450" height="450">
+        </canvas>
+        <p class="text-secondary">Selecione <strong>Elevação Lateral</strong> ou <strong>Elevação Frontal</strong> e veja o boneco na prática!</p>
+      </div>
+      <div class="container justify-content-center">
+        <div class="input-group mb-3">
+          <label class="col-3 btn btn-lg btn-outline-secondary active">
+            <input type="radio" name="options" id="ambos" autocomplete="off" checked> Elevação Lateral
+          </label>
+          <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check1">Marcar Feito</label>
+          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+          <p class="lead m-2">Última carga: 5kg em 01/02/2023</p>
+        </div>
+        <div class="input-group mb-3">
+          <label class="col-3 btn btn-lg btn-outline-secondary">
+            <input type="radio" name="options" id="unilateral" autocomplete="off"> Elevação Lateral
+          </label>
+          <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check2">Marcar Feito</label>
+          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+          <p class="lead m-2">Última carga: 7kg em 01/02/2023</p>
+        </div>
+        <div class="input-group mb-3">
+          <label class="col-3 btn btn-lg btn-outline-secondary">
+            <input type="radio" name="options" id="elevacaoFrontal" autocomplete="off"> Elevação Frontal
+          </label>
+          <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off"><label class="btn btn-lg btn-outline-success" for="btn-check3">Marcar Feito</label>
+          <input type="text" class="btn btn-light border-secondary rounded-end" placeholder="Carga de hoje" aria-label="Example text with two button addons">
+          <p class="lead m-2">Última carga: 6kg em 01/02/2023</p>
+        </div>
+      </div>
+      <div class="d-grid gap-2 mx-auto d-md-flex justify-content-md-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Salvar Treino</button>
+      </div>
+
+
       <div class="container">
         <h1 class="display-4 fw-bold lh-1 mb-2 d-flex justify-content-center">Como funciona?</h1>
         <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
