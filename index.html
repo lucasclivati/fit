@@ -118,7 +118,7 @@
     </div>
     <div class="text-center my-5 bg-body-tertiary border rounded">
       <div class="pt-4">
-        <h1 class="display-4 fw-bolder lh-1 mb-2 d-flex justify-content-center logo">Teste agora!</h1>
+        <h1 class="display-4 fw-medium lh-1 mb-2 d-flex justify-content-center text-primary">Teste agora!</h1>
       </div>
       <div class="col-6 col-md-12 col-sm-12">
         <canvas id="canvas" width="450" height="450">
@@ -136,23 +136,27 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="input-group mb-3 justify-content-center">
-                <div>
-                  <p class="lead m-2">Última carga: 7kg em 01/02/2023</p>
-                  <p class="lead m-2">Max carga: 8kg em 01/11/2022</p>
+              <div class="input-group mb-3">
+                <input type="text" placeholder="Carga de hoje (kg)" class="form-control" aria-label="Text input with dropdown button">
+                  <button class="btn btn-primary btn " type="button">
+                  Salvar carga
+                  </button>
+                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ações
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item text-primary" href="#">Fazer no final</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#">Matar exercício</a></li>
+                  </ul>
+              </div>
+              <div class="accordion-body">
+                <div class="input-group mb-3 justify-content-center">
+                  <div>
+                    <p class="lead m-2">Última carga: 7kg em 01/02/2023</p>
+                    <p class="lead m-2">Max carga: 8kg em 01/11/2022</p>
+                  </div>
                 </div>
-              </div>
-              <div class="input-group input-group-lg justify-content-center">
-                <input type="text" class="rounded-start" placeholder="Insira a carga de hoje" aria-label="Recipient's username with two button addons">
-                <span class="input-group-text"> em Kg</span>
-                <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off"><label
-                  class="btn btn-lg btn-outline-success" for="btn-check1">Salvar Exercício</label>
-              </div>
-              <div class="input-group input-group-md justify-content-center mt-3">
-                <button class="btn btn-warning rounded-start">Deixar p/ fim do treino</button>
-                <button class="btn btn-danger">Matar Exercício</button>
-              </div>
             </div>
           </div>
         </div>
