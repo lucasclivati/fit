@@ -1,39 +1,79 @@
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
 @font-face {
-    font-family: 'gd_boingbold';
-    src: url('files/fonts/gd-boing-bold-webfont.woff2') format('woff2'),
-         url('files/fonts/gd-boing-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'gd_boingbold';
+  src: url('files/fonts/gd-boing-bold-webfont.woff2') format('woff2'),
+    url('files/fonts/gd-boing-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
-.logo{
-    font-family: 'gd_boingbold', Arial, sans-serif;
-    font-weight:normal;
-    font-style:normal;
-    color: #007bff;
-}
-
-.nav-link:hover{
+.logo {
+  font-family: 'gd_boingbold', Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
   color: #007bff;
 }
 
-button.btndegrade{
-  font-weight:bold;
-  font-style:normal;
+.nav-link:hover {
+  color: #007bff;
+}
+
+button.btndegrade {
+  font-weight: bold;
+  font-style: normal;
   /* background-color: aliceblue !important; */
-  background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(102,16,242,1) 100%) !important;
+  background: linear-gradient(90deg, var(--bs-blue) 0%, var(--bs-indigo) 100%) !important;
   color: white;
 }
 
-button.btndegrade:hover{
-  font-style:oblique;
+button.btndegrade:hover {
+  font-style: oblique;
 }
 
 #heroInicial {
-    margin-top: 120px;
-  }
+  margin-top: 120px;
+}
+
+#h1heroInicial {
+  background: -webkit-linear-gradient(var(--bs-blue), var(--bs-indigo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 #heroSecundario {
-    margin-top: 120px;
-  }
+  margin-top: 120px;
+}
