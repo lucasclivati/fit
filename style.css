@@ -14,6 +14,22 @@
     color: #007bff;
 }
 
+.nav-link:hover{
+  color: #007bff;
+}
+
+button.btndegrade{
+  font-weight:bold;
+  font-style:normal;
+  /* background-color: aliceblue !important; */
+  background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(102,16,242,1) 72%) !important;
+  color: white;
+}
+
+button.btndegrade:hover{
+  font-style:oblique;
+}
+
 #heroInicial {
     margin-top: 120px;
   }
