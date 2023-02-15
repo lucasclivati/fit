@@ -22,7 +22,7 @@ button.btndegrade{
   font-weight:bold;
   font-style:normal;
   /* background-color: aliceblue !important; */
-  background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(102,16,242,1) 72%) !important;
+  background: linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(102,16,242,1) 100%) !important;
   color: white;
 }
 
