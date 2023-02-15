@@ -69,7 +69,7 @@ button.btndegrade:hover {
 }
 
 #h1heroInicial {
-  background: -webkit-linear-gradient(var(--bs-blue), var(--bs-indigo));
+  background: -webkit-linear-gradient(180deg, var(--bs-indigo), var(--bs-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -79,7 +79,7 @@ button.btndegrade:hover {
 }
 
 #h1heroFinal {
-  background: -webkit-linear-gradient(var(--bs-blue), var(--bs-indigo));
+  background: -webkit-linear-gradient(180deg, var(--bs-indigo), var(--bs-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
