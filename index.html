@@ -121,7 +121,7 @@
         <h1 class="display-4 fw-medium lh-1 mb-2 d-flex justify-content-center text-primary">Teste agora!</h1>
       </div>
       <div>
-        <canvas id="canvas" width="450" height="450">
+        <canvas id="canvas" width="320" height="320">
         </canvas>
         <p class="text-secondary">Selecione <span  class="gradientFont fw-bold">Elevação Frontal</span> ou <span class="gradientFont fw-bold">Elevação Unilateral</span><br>e veja seu avatar te auxiliar!</p>
       </div>
@@ -325,7 +325,7 @@
   const btnElevacaoFrontal = document.getElementById('elevacaoFrontal');
 
   const r = new rive.Rive({
-    src: "/files/rivanimations/shoulders.riv",
+    src: "/files/rivanimations/shoulders_resized.riv",
     canvas: document.getElementById('canvas'),
     autoplay: true,
     stateMachines: 'StateOmbro',
