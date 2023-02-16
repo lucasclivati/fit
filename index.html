@@ -48,9 +48,9 @@
   </div>
 </nav>
 <main>
-  <div class="px-4 py-5 text-center mb-5" id="heroInicial">
-    <h1 class="display-5 fw-bold mt-5 mb-5 mx-auto" id="h1heroInicial">
-      Cansado de treinos em planilhas ou apps ruins?
+  <div class="px-4 py-5 text-center mb-5 heroMargins">
+    <h1 class="display-5 fw-bold mt-5 mb-5 mx-auto gradientFont">
+      Cansado de treinos em planilhas <br>ou apps ruins?
     </h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-5">
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  <div class="container" id="heroSecundario">
+  <div class="container heroMargins">
     <h1 class="display-4 fw-medium lh-1 mb-2 d-flex justify-content-center text-primary">Como funciona?</h1>
     <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
     <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
@@ -123,8 +123,7 @@
       <div>
         <canvas id="canvas" width="450" height="450">
         </canvas>
-        <p class="text-secondary">Selecione <strong>Elevação Frontal</strong> ou <strong>Elevação Unilateral</strong> e
-          veja seu avatar te auxiliar!</p>
+        <p class="text-secondary">Selecione <span  class="gradientFont fw-bold">Elevação Frontal</span> ou <span class="gradientFont fw-bold">Elevação Unilateral</span><br>e veja seu avatar te auxiliar!</p>
       </div>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -132,7 +131,7 @@
             <button id="ambos" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
               <div>
                   <div>
-                    <h5><span>1</span>. Elevação Lateral</h5>
+                    <h5 class="gradientFont fw-bold"><span>1</span>. Elevação Lateral</h5>
                   </div>
                   <div>
                     7kg em 01/02/23
@@ -144,19 +143,21 @@
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="input-group mb-3">
-                <input type="text" placeholder="Carga de hoje (kg)" class="form-control" aria-label="Text input with dropdown button">
+                <input type="text" placeholder="Carga de hoje (kg)" class="form-control" aria-label="">
                   <button class="btn btn-primary btn " type="button">
                   Salvar carga
                   </button>
-                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu bg-light">
-                    <li><a class="dropdown-item" href="#">Histórico Cargas</a></li>
-                    <li><a class="dropdown-item text-primary" href="#">Fazer no Final</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
-                  </ul>
+                  <div class="dropdown-menu-end">
+                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu" data-bs-theme="dark">
+                      <li><a class="dropdown-item text-white" href="#">Histórico Cargas</a></li>
+                      <li><a class="dropdown-item text-warning" href="#">Deixar pro fim</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
+                    </ul>
+                  </div>
               </div>
             </div>
           </div>
@@ -166,7 +167,7 @@
             <button id="elevacaoFrontal" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               <div>
                   <div>
-                    <h5><span>2</span>. Elevação Frontal</h5>
+                    <h5 class="gradientFont fw-bold"><span>2</span>. Elevação Frontal</h5>
                   </div>
                   <div>
                     8kg em 01/02/23
@@ -182,15 +183,17 @@
                   <button class="btn btn-primary btn " type="button">
                   Salvar carga
                   </button>
-                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu bg-light">
-                    <li><a class="dropdown-item" href="#">Histórico Cargas</a></li>
-                    <li><a class="dropdown-item text-primary" href="#">Fazer no Final</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
-                  </ul>
+                  <div class="dropdown-menu-end">
+                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu" data-bs-theme="dark">
+                      <li><a class="dropdown-item text-white" href="#">Histórico Cargas</a></li>
+                      <li><a class="dropdown-item text-warning" href="#">Deixar pro fim</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
+                    </ul>
+                  </div>
               </div>
             </div>
           </div>
@@ -200,7 +203,7 @@
             <button id="unilateral" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               <div>
                   <div>
-                    <h5><span>3</span>. Elevação Unilateral</h5>
+                    <h5 class="gradientFont fw-bold"><span>3</span>. Elevação Unilateral</h5>
                   </div>
                   <div>
                     6kg em 01/02/23
@@ -216,15 +219,17 @@
                   <button class="btn btn-primary btn " type="button">
                   Salvar carga
                   </button>
-                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu bg-light">
-                    <li><a class="dropdown-item" href="#">Histórico Cargas</a></li>
-                    <li><a class="dropdown-item text-primary" href="#">Fazer no Final</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
-                  </ul>
+                  <div class="dropdown-menu-end">
+                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu" data-bs-theme="dark">
+                      <li><a class="dropdown-item text-white" href="#">Histórico Cargas</a></li>
+                      <li><a class="dropdown-item text-warning" href="#">Deixar pro fim</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item text-danger" href="#">Matar Exercício</a></li>
+                    </ul>
+                  </div>
               </div>
           </div>
         </div>
@@ -242,9 +247,9 @@
   <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3" id="h1heroFinal">
+        <h1 class="display-4 fw-bold lh-lg mb-3 gradientFont">
           Cadastre-se agora!
-          <lottie-player class="d-inline-block" id="ipaddumbbell" src="/files/jsonanimations/ipaddumbbell.json" background="transparent" speed="1" style="width: 40px" autoplay> </lottie-player>
+          <lottie-player class="d-inline-block" id="ipaddumbbell" src="/files/jsonanimations/ipaddumbbell.json" background="transparent" speed="1" style="width: 40px" autoplay loop> </lottie-player>
         </h1>
         <p class="col-lg-10 fs-4">É de graça parar você controlar seu treino e monitorar seus resultados. Queremos você
           fit agora!</p>

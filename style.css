@@ -64,21 +64,12 @@ button.btndegrade:hover {
   font-style: oblique;
 }
 
-#heroInicial {
+.heroMargins {
   margin-top: 120px;
 }
 
-#h1heroInicial {
-  background: -webkit-linear-gradient(180deg, var(--bs-indigo), var(--bs-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-#heroSecundario {
-  margin-top: 120px;
-}
-
-#h1heroFinal {
+.gradientFont{
   background: -webkit-linear-gradient(180deg, var(--bs-indigo), var(--bs-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
