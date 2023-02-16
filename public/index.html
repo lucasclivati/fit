@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="files/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Vlapp</title>
-  <script src="./node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
-  <script src="./node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
-  <script src="./node_modules/@rive-app/canvas/rive.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
+  <script src="../node_modules/@lottiefiles/lottie-interactivity/dist/lottie-interactivity.min.js"></script>
+  <script src="../node_modules/@rive-app/canvas/rive.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <nav class="navbar navbar-expand-md bg-body-tertiary">
   <div class="container-fluid">
@@ -66,7 +66,7 @@
     <small class="lead d-flex justify-content-center my-4">Não leva mais de 5 minutos, confia!</small>
     <div class="row flex-lg-row align-items-center justify-content-center g-5 py-5">
       <div class="row col-sm-12 col-md-6 col-lg-6">
-        <lottie-player id="deadbug" src="/files/jsonanimations/deadbug.json" style="width: 375px;">
+        <lottie-player id="deadbug" src="../files/jsonanimations/deadbug.json" style="width: 375px;">
         </lottie-player>
         <script>
           LottieInteractivity.create({
@@ -85,31 +85,31 @@
       <div class="row col-sm-12 col-md-6 col-lg-6 ms-1">
         <div class="d-flex list-group-item mb-2 lead fw-medium">
           <div class="me-2">
-            <img style="height: 35px;" src="node_modules/bootstrap-icons/icons/1-square-fill.svg"></img>
+            <img style="height: 35px;" src="../node_modules/bootstrap-icons/icons/1-square-fill.svg"></img>
           </div>
           <p>Escolha a quantidade de treinos semanais</p>
         </div>
         <div class="d-flex list-group-item mb-2 lead ">
           <div class="me-2">
-            <img style="height: 35px;" src="node_modules/bootstrap-icons/icons/2-square-fill.svg"></img>
+            <img style="height: 35px;" src="../node_modules/bootstrap-icons/icons/2-square-fill.svg"></img>
           </div>
           <p>Adicione seus exercícios aos treinos</p>
         </div>
         <div class="d-flex list-group-item mb-2 lead fw-medium">
           <div class="me-2">
-            <img style="height: 35px;" src="node_modules/bootstrap-icons/icons/3-square-fill.svg"></img>
+            <img style="height: 35px;" src="../node_modules/bootstrap-icons/icons/3-square-fill.svg"></img>
           </div>
           <p>Confira seus exercícios durante os treinos</p>
         </div>
         <div class="d-flex list-group-item mb-2 lead ">
           <div class="me-2">
-            <img style="height: 35px;" src="node_modules/bootstrap-icons/icons/4-square-fill.svg"></img>
+            <img style="height: 35px;" src="../node_modules/bootstrap-icons/icons/4-square-fill.svg"></img>
           </div>
           <p>Monitore seu desempenho</p>
         </div>
         <div class="d-flex list-group-item mb-2 lead fw-medium">
           <div class="me-2">
-            <img style="height: 35px;" src="node_modules/bootstrap-icons/icons/5-square-fill.svg"></img>
+            <img style="height: 35px;" src="../node_modules/bootstrap-icons/icons/5-square-fill.svg"></img>
           </div> 
           <p>Compartilhe seus resultados</p>
         </div>
@@ -248,7 +248,7 @@
       <div class="col-lg-7 text-center text-lg-start">
         <h1 class="display-4 fw-bold lh-lg mb-3 gradientFont">
           Cadastre-se agora!
-          <lottie-player class="d-inline-block" id="ipaddumbbell" src="/files/jsonanimations/ipaddumbbell.json" background="transparent" speed="1" style="width: 40px" autoplay loop> </lottie-player>
+          <lottie-player class="d-inline-block" id="ipaddumbbell" src="../files/jsonanimations/ipaddumbbell.json" background="transparent" speed="1" style="width: 40px" autoplay loop> </lottie-player>
         </h1>
         <p class="col-lg-10 fs-4">É de graça parar você controlar seu treino e monitorar seus resultados. Queremos você
           fit agora!</p>
@@ -324,7 +324,7 @@
   const btnElevacaoFrontal = document.getElementById('elevacaoFrontal');
 
   const r = new rive.Rive({
-    src: "/files/rivanimations/shoulders_resized.riv",
+    src: "../files/rivanimations/shoulders_resized.riv",
     canvas: document.getElementById('canvas'),
     autoplay: true,
     stateMachines: 'StateOmbro',
