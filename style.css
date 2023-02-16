@@ -56,15 +56,15 @@ button.btndegrade {
   font-weight: bold;
   font-style: normal;
   border: none;
-  /* background-color: aliceblue !important; */
   background: linear-gradient(90deg, var(--bs-blue) 0%, var(--bs-indigo) 100%) !important;
   color: white;
-  opacity: 0.8;
+  opacity: 1;
+
   transition: 0.3s;
 }
 
 button.btndegrade:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .heroMargins {
