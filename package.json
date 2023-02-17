@@ -2,8 +2,12 @@
   "name": "fit",
   "version": "1.0.0",
   "description": "Website to check gym exercicies.",
-  "main": "index.js",
+  "source": "./public/index.html",
   "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^1.6.2",
+    "@lottiefiles/lottie-player": "^1.7.1",
+    "@rive-app/canvas": "^1.0.99",
+    "@rive-app/canvas-advanced": "^1.0.95",
     "bootstrap": "^5.3.0-alpha1",
     "bootstrap-icons": "^1.10.3",
     "caniuse-lite": "^1.0.30001451",
@@ -27,7 +31,8 @@
     "tslib": "^2.5.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -39,5 +44,9 @@
   "bugs": {
     "url": "https://github.com/lucasclivati/fit/issues"
   },
-  "homepage": "https://github.com/lucasclivati/fit#readme"
+  "homepage": "https://github.com/lucasclivati/fit#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
 }
