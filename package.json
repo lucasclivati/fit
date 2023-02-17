@@ -31,6 +31,8 @@
     "tslib": "^2.5.0"
   },
   "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
