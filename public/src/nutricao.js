@@ -1,53 +1,80 @@
 const refeicao = document.querySelector("#refeicao");
-let refeicaoSelecionada = refeicao.children[refeicao.selectedIndex];
 const alimento = document.querySelector("#alimento");
 const quantidade = document.querySelector("#quantidade");
 const inserir = document.querySelector("#inserirRefeicao");
 const itemDieta = document.querySelector("#itemDieta");
-const novoCard = document.createElement("div");
-const divDoNovoCard = document.createElement("div");
+const bomba = document.querySelector("#bomba");
+let novoCard;
+let divDoNovoCard;
 let tituloRefeicao = refeicao.value;
-const novaRefeicao = document.createElement("h5");
-const novoAlimento = document.createElement("p");
-
+let novaRefeicao;  
+let novoAlimento; 
+let refeicaoSelecionada = refeicao.children[refeicao.selectedIndex];
+let cafeDaManha = {
+    id: new Date(),
+    alimentoDigitado: [alimento.value],
+    quantidadeDigitada: [quantidade.value]
+};
+let lancheDaManha = {
+    id: new Date(),
+    alimentoDigitado: [alimento.value],
+    quantidadeDigitada: [quantidade.value]
+};
+let almoco = {
+    id: new Date(),
+    alimentoDigitado: [alimento.value],
+    quantidadeDigitada: [quantidade.value]
+};
 
 inserir.addEventListener("click", escreveHtml);
 
 function escreveHtml (){
     criaDivCard();
     criaDivCardBody();
-    adicionaAlilmento();
+    refeicaoSelecionada = refeicao.children[refeicao.selectedIndex];
     insereTituloCard();
-    adicionaAlilmento();
+    adicionaAlimento();
+    
 }
+
+//Criar novo card
 function criaDivCard (){
+    bomba.removeAttribute("style");
+    novoCard = document.createElement("div");
     itemDieta.appendChild(novoCard);
-    novoCard.className +="card border-secondary mb-3";
+    novoCard.className +="card border-secondary mb-3 d-flex-column";
     novoCard.style += "max-width: 18rem;";
 }
 
 function criaDivCardBody (){
+    divDoNovoCard = document.createElement("div");
     novoCard.appendChild(divDoNovoCard);
     divDoNovoCard.className +="card-body text-secondary";
 }
 
 function insereTituloCard() {
+    novaRefeicao = document.createElement("h5");
     divDoNovoCard.appendChild(novaRefeicao);
     novaRefeicao.className +="card-title";
-    novaRefeicao.textContent = refeicaoSelecionada.textContent;
+    switch (refeicaoSelecionada.value) {
+        case "cafeDaManha":
+            novaRefeicao.textContent = "Café da Manhã"
+            
+            break;
+        case "almoco":
+            novaRefeicao.textContent = "Almoço"
+            console.log("olá")
+            break;
+        default:
+            break;
+    }
 }
 
-function adicionaAlilmento(){
+function adicionaAlimento(){
+    novoAlimento = document.createElement("p");
     divDoNovoCard.appendChild(novoAlimento);
     novoAlimento.className += "card-text"
-    novoAlimento.textContent = alimento.value +" " + parseInt(quantidade.value) + "g";
+    novoAlimento.textContent += alimento.value +" " + quantidade.value + "g ; ";
+   
 }
 
-
-/*<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>*/
