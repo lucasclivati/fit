@@ -65,4 +65,7 @@ salvarTreino.addEventListener("click", () => {
     document.getElementById('notificacaoTreinoSalvo').classList.add('show');
 })
 
+//criar uma função pra matar treino e ficar vermelho
+//criar uma função pra deixar pro final do treino
+//converter tudo pra foreach
 
