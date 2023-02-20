@@ -10,29 +10,9 @@
     "@rive-app/canvas-advanced": "^1.0.95",
     "bootstrap": "^5.3.0-alpha1",
     "bootstrap-icons": "^1.10.3",
-    "caniuse-lite": "^1.0.30001451",
-    "client-only": "^0.0.1",
-    "core-js": "^3.27.2",
-    "firebase": "^9.17.1",
-    "js-tokens": "^4.0.0",
-    "lit": "^2.6.1",
-    "lit-element": "^3.2.2",
-    "lit-html": "^2.6.1",
-    "loose-envify": "^1.4.0",
-    "lottie-web": "^5.10.2",
-    "nanoid": "^3.3.4",
-    "pako": "^2.1.0",
-    "picocolors": "^1.0.0",
-    "postcss": "^8.4.14",
-    "resize-observer-polyfill": "^1.5.1",
-    "scheduler": "^0.23.0",
-    "source-map-js": "^1.0.2",
-    "styled-jsx": "^5.1.1",
-    "tslib": "^2.5.0"
+    "firebase": "^9.17.1"
   },
   "scripts": {
-    "dev": "parcel",
-    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -46,7 +26,5 @@
   },
   "homepage": "https://github.com/lucasclivati/fit#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.3",
-    "parcel": "^2.8.3"
   }
 }
