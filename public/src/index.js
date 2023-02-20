@@ -33,6 +33,7 @@ let exerciciosOmbro = [
 //     }
 // };
 
+listaExercicios = document.querySelectorAll('.accordion-item');
 
 //ao clickar no botão salvar ele: muda o peso no array, abre o proximo exercicio, clicka no input do proximo exercicio
 
@@ -40,16 +41,22 @@ salvarCarga1.addEventListener("click", () => {
     exerciciosOmbro[0].ultimoPeso = novoPeso1.value;
     elevacaoFrontal.click();
     novoPeso2.focus();
+    listaExercicios[0].classList.add('border');
+    listaExercicios[0].classList.add('border-success');
     });
 
 salvarCarga2.addEventListener("click", () => {
     exerciciosOmbro[1].ultimoPeso = novoPeso2.value;
     unilateral.click();
     novoPeso3.focus();
+    listaExercicios[1].classList.add('border');
+    listaExercicios[1].classList.add('border-success');
     });
 salvarCarga3.addEventListener("click", () => {
     exerciciosOmbro[2].ultimoPeso = novoPeso3.value;
     unilateral.click();
+    listaExercicios[2].classList.add('border');
+    listaExercicios[2].classList.add('border-success');
     });
 
 
