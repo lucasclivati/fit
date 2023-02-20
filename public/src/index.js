@@ -5,6 +5,7 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "unidadePeso": "kg",
         "idTrigger": "ambos",
+        "executado": false
     },
     {
         "nome": "Elevação Frontal",
@@ -12,6 +13,7 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "unidadePeso": "kg",
         "idTrigger": "elevacaoFrontal",
+        "executado": false
     },
     {
         "nome": "Elevação Unilateral",
@@ -19,8 +21,28 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "unidadePeso": "kg",
         "idTrigger": "unilateral",
+        "executado": false
     }
 ];
+
+function clickarNovoPeso1 (){
+    document.getElementById("novoPeso1");
+    }
+
+salvarCarga1.addEventListener("click", () => {
+    exerciciosOmbro[0].ultimoPeso = novoPeso1.value;
+    elevacaoFrontal.click();
+    });
+
+salvarCarga2.addEventListener("click", () => {
+    exerciciosOmbro[1].ultimoPeso = novoPeso2.value;
+    unilateral.click();
+    });
+salvarCarga3.addEventListener("click", () => {
+    exerciciosOmbro[2].ultimoPeso = novoPeso3.value;
+    unilateral.click();
+    });
+
 
 console.log(exerciciosOmbro);
 
