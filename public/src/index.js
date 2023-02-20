@@ -75,14 +75,14 @@ matar0.addEventListener("click", () => {
 
 matar1.addEventListener("click", () => {
     exerciciosOmbro[1].ultimoPeso = 0;
-    exerciciosOmbro[0].executado = false;
+    exerciciosOmbro[1].executado = false;
     listaExercicios[1].classList.add('border', 'border-danger');
     unilateral.click();
     })
 
 matar2.addEventListener("click", () => {
     exerciciosOmbro[2].ultimoPeso = 0;
-    exerciciosOmbro[0].executado = false;
+    exerciciosOmbro[2].executado = false;
     listaExercicios[2].classList.add('border', 'border-danger');
     unilateral.click();
     })
