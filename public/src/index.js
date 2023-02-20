@@ -50,7 +50,7 @@ salvarCarga0.addEventListener("click", () => {
 
 salvarCarga1.addEventListener("click", () => {
     exerciciosOmbro[1].ultimoPeso = novoPeso1.value;
-    exerciciosOmbro[0].executado = true;
+    exerciciosOmbro[1].executado = true;
     unilateral.click();
     novoPeso2.focus();
     listaExercicios[1].classList.add('border');
@@ -59,7 +59,7 @@ salvarCarga1.addEventListener("click", () => {
 
 salvarCarga2.addEventListener("click", () => {
     exerciciosOmbro[2].ultimoPeso = novoPeso2.value;
-    exerciciosOmbro[0].executado = true;
+    exerciciosOmbro[2].executado = true;
     unilateral.click();
     listaExercicios[2].classList.add('border');
     listaExercicios[2].classList.add('border-success');
