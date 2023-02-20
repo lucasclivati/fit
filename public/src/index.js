@@ -39,13 +39,13 @@ let exerciciosOmbro = [
 salvarCarga1.addEventListener("click", () => {
     exerciciosOmbro[0].ultimoPeso = novoPeso1.value;
     elevacaoFrontal.click();
-    //FAZER: adicionar automacao pra clickar automaticamente dentro do input novoPeso2
+    novoPeso2.focus();
     });
 
 salvarCarga2.addEventListener("click", () => {
     exerciciosOmbro[1].ultimoPeso = novoPeso2.value;
     unilateral.click();
-    //FAZER: adicionar automacao pra clickar automaticamente dentro do input novoPeso3
+    novoPeso3.focus();
     });
 salvarCarga3.addEventListener("click", () => {
     exerciciosOmbro[2].ultimoPeso = novoPeso3.value;
