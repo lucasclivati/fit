@@ -38,7 +38,6 @@ listaExercicios = document.querySelectorAll('.accordion-item');
 botoesSalvarCarga = document.querySelectorAll('.salvarCarga');
 
 //ao clickar no botão salvar ele: muda o peso no array, abre o proximo exercicio, clicka no input do proximo exercicio
-
 salvarCarga0.addEventListener("click", () => {
     exerciciosOmbro[0].ultimoPeso = novoPeso0.value;
     exerciciosOmbro[0].executado = true;
@@ -97,5 +96,6 @@ salvarTreino.addEventListener("click", () => {
 //converter tudo pra foreach
 //ao invés de apresentar através de html, fazer o html ser exibido através de array
 //criar uma função pra deixar pro final do treino
+//permitir usar enter para passar pro próximo treino
 
 
