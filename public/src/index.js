@@ -4,7 +4,7 @@ let exerciciosOmbro = [
         "ultimoPeso": 7,
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
-        "dataAtual": null,
+        "dataRealizado": null,
         "unidadePeso": "kg",
         "idTrigger": "ambos",
         "executado": false
@@ -14,7 +14,7 @@ let exerciciosOmbro = [
         "ultimoPeso": 8,
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
-        "dataAtual": null,
+        "dataRealizado": null,
         "unidadePeso": "kg",
         "idTrigger": "elevacaoFrontal",
         "executado": false
@@ -24,7 +24,7 @@ let exerciciosOmbro = [
         "ultimoPeso": 6,
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
-        "dataAtual": null,
+        "dataRealizado": null,
         "unidadePeso": "kg",
         "idTrigger": "unilateral",
         "executado": false
@@ -32,14 +32,21 @@ let exerciciosOmbro = [
 ];
 
 listaExercicios = document.querySelectorAll('.accordion-item');
-
 botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
-
 botoesMatarTreino = document.querySelectorAll('[data-matar-treino]');
-
 botoesAcordionTreino = document.querySelectorAll('.accordionExercicio');
-
 novoPeso = document.querySelectorAll('[data-novo-peso]');
+
+
+var currentDate = new Date();
+var year = currentDate.getFullYear();
+var month = currentDate.getMonth() + 1;
+var day = currentDate.getDate();
+var hours = currentDate.getHours();
+var minutes = currentDate.getMinutes();
+var seconds = currentDate.getSeconds();
+var dataAtual = [day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + ':' + seconds];
+
 
 //Salvar carga = Atualiza o array do peso, marca o exercicio como executado, adiciona borda verde no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
 //O último ele não abre o próximo exercício, apenas fecha o accordion do último, instigando a salvar o treino inteiro
@@ -49,6 +56,7 @@ function salvarCarga(){
             botoesSalvarCarga[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = novoPeso[0].value;
                 exerciciosOmbro[i].executado = true;
+                exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
                 botoesAcordionTreino[i+1].click();
@@ -58,6 +66,7 @@ function salvarCarga(){
             botoesSalvarCarga[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = novoPeso[2].value;
                 exerciciosOmbro[i].executado = true;
+                exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
                 botoesAcordionTreino[i].click();
@@ -77,6 +86,7 @@ function matarTreino(){
             botoesMatarTreino[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
+                exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border', 'border-danger');
                 botoesAcordionTreino[i+1].click();
                 })
@@ -84,6 +94,7 @@ function matarTreino(){
             botoesMatarTreino[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
+                exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border', 'border-danger');
                 botoesAcordionTreino[i].click(); //quando for o último, ele clicka nele mesmo pra fechar
                 })
@@ -98,8 +109,9 @@ salvarTreino.addEventListener("click", () => {
     document.getElementById('notificacaoTreinoSalvo').classList.add('show');
 })
 
+
+//A FAZER AINDA:
 //permitir usar enter para passar pro próximo treino
-//converter o matar treino pra i+
 //ao invés de apresentar através de html, fazer o html ser exibido através de array
 //criar uma função pra deixar pro final do treino
 
