@@ -3,6 +3,8 @@ let exerciciosOmbro = [
         "nome": "Elevação Lateral",
         "ultimoPeso": 7,
         "dataUltimoExec": "01/02/2023",
+        "pesoAtual": 0,
+        "dataAtual": null,
         "unidadePeso": "kg",
         "idTrigger": "ambos",
         "executado": false
@@ -11,6 +13,8 @@ let exerciciosOmbro = [
         "nome": "Elevação Frontal",
         "ultimoPeso": 8,
         "dataUltimoExec": "01/02/2023",
+        "pesoAtual": 0,
+        "dataAtual": null,
         "unidadePeso": "kg",
         "idTrigger": "elevacaoFrontal",
         "executado": false
@@ -19,6 +23,8 @@ let exerciciosOmbro = [
         "nome": "Elevação Unilateral",
         "ultimoPeso": 6,
         "dataUltimoExec": "01/02/2023",
+        "pesoAtual": 0,
+        "dataAtual": null,
         "unidadePeso": "kg",
         "idTrigger": "unilateral",
         "executado": false
@@ -41,7 +47,7 @@ function salvarCarga(){
     for (let i = 0; i < exerciciosOmbro.length; i++){
         if(i  < exerciciosOmbro.length-1){
             botoesSalvarCarga[i].addEventListener("click", () => {
-                exerciciosOmbro[i].ultimoPeso = novoPeso[0].value;
+                exerciciosOmbro[i].pesoAtual = novoPeso[0].value;
                 exerciciosOmbro[i].executado = true;
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
@@ -50,7 +56,7 @@ function salvarCarga(){
                 });
         } else {
             botoesSalvarCarga[i].addEventListener("click", () => {
-                exerciciosOmbro[i].ultimoPeso = novoPeso[2].value;
+                exerciciosOmbro[i].pesoAtual = novoPeso[2].value;
                 exerciciosOmbro[i].executado = true;
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
@@ -62,26 +68,30 @@ function salvarCarga(){
 
 salvarCarga();
 
-botoesMatarTreino[0].addEventListener("click", () => {
-    exerciciosOmbro[0].ultimoPeso = 0;
-    exerciciosOmbro[0].executado = false;
-    listaExercicios[0].classList.add('border', 'border-danger');
-    botoesAcordionTreino[1].click();
-    })
+//Matar treino = Atualiza o array do peso atual = 0, marca o exercicio como não executado, adiciona borda vermelha no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
+//O último ele não abre o próximo exercício, apenas fecha o accordion do último, instigando a salvar o treino inteiro
 
-botoesMatarTreino[1].addEventListener("click", () => {
-    exerciciosOmbro[1].ultimoPeso = 0;
-    exerciciosOmbro[1].executado = false;
-    listaExercicios[1].classList.add('border', 'border-danger');
-    botoesAcordionTreino[2].click();
-    })
+function matarTreino(){
+    for (let i=0; i < exerciciosOmbro.length; i++){
+        if (i < exerciciosOmbro.length-1){
+            botoesMatarTreino[i].addEventListener("click", () => {
+                exerciciosOmbro[i].pesoAtual = 0;
+                exerciciosOmbro[i].executado = false;
+                listaExercicios[i].classList.add('border', 'border-danger');
+                botoesAcordionTreino[i+1].click();
+                })
+        } else {
+            botoesMatarTreino[i].addEventListener("click", () => {
+                exerciciosOmbro[i].pesoAtual = 0;
+                exerciciosOmbro[i].executado = false;
+                listaExercicios[i].classList.add('border', 'border-danger');
+                botoesAcordionTreino[i].click(); //quando for o último, ele clicka nele mesmo pra fechar
+                })
+        }
+    }
+}
 
-botoesMatarTreino[2].addEventListener("click", () => {
-    exerciciosOmbro[2].ultimoPeso = 0;
-    exerciciosOmbro[2].executado = false;
-    listaExercicios[2].classList.add('border', 'border-danger');
-    botoesAcordionTreino[2].click(); //quando for o último, ele clicka nele mesmo pra fechar
-    })
+matarTreino();
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
 salvarTreino.addEventListener("click", () => {
