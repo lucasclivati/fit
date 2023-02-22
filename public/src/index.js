@@ -25,7 +25,17 @@ let exerciciosOmbro = [
     }
 ];
 
-// console.log(exerciciosOmbro);
+listaExercicios = document.querySelectorAll('.accordion-item');
+
+botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
+
+botoesMatarTreino = document.querySelectorAll('[data-matar-treino]');
+
+botoesAcordionTreino = document.querySelectorAll('.accordionExercicio');
+
+novoPeso = document.querySelectorAll('[data-novo-peso]');
+
+
 
 // function exerciciosExample(){
 //     for (let i = 0; i < exerciciosOmbro.length; i++){
@@ -33,57 +43,53 @@ let exerciciosOmbro = [
 //     }
 // };
 
-listaExercicios = document.querySelectorAll('.accordion-item');
-
-botoesSalvarCarga = document.querySelectorAll('.salvarCarga');
-
 //ao clickar no botão salvar ele: muda o peso no array, abre o proximo exercicio, clicka no input do proximo exercicio
-salvarCarga0.addEventListener("click", () => {
-    exerciciosOmbro[0].ultimoPeso = novoPeso0.value;
+botoesSalvarCarga[0].addEventListener("click", () => {
+    exerciciosOmbro[0].ultimoPeso = novoPeso[0].value;
     exerciciosOmbro[0].executado = true;
-    elevacaoFrontal.click();
-    novoPeso1.focus();
     listaExercicios[0].classList.add('border');
     listaExercicios[0].classList.add('border-success');
+    botoesAcordionTreino[1].click();
+    novoPeso[1].focus();
     });
 
-salvarCarga1.addEventListener("click", () => {
-    exerciciosOmbro[1].ultimoPeso = novoPeso1.value;
+botoesSalvarCarga[1].addEventListener("click", () => {
+    exerciciosOmbro[1].ultimoPeso = novoPeso[1].value;
     exerciciosOmbro[1].executado = true;
-    unilateral.click();
-    novoPeso2.focus();
     listaExercicios[1].classList.add('border');
     listaExercicios[1].classList.add('border-success');
+    botoesAcordionTreino[2].click();
+    novoPeso[2].focus();
     });
 
-salvarCarga2.addEventListener("click", () => {
-    exerciciosOmbro[2].ultimoPeso = novoPeso2.value;
+botoesSalvarCarga[2].addEventListener("click", () => {
+    exerciciosOmbro[2].ultimoPeso = novoPeso[2].value;
     exerciciosOmbro[2].executado = true;
-    unilateral.click();
     listaExercicios[2].classList.add('border');
     listaExercicios[2].classList.add('border-success');
+    botoesAcordionTreino[2].click(); //qnd for o ultimo clickar nele mesmo
     });
 
 
-matar0.addEventListener("click", () => {
+botoesMatarTreino[0].addEventListener("click", () => {
     exerciciosOmbro[0].ultimoPeso = 0;
     exerciciosOmbro[0].executado = false;
     listaExercicios[0].classList.add('border', 'border-danger');
-    elevacaoFrontal.click();
+    botoesAcordionTreino[1].click();
     })
 
-matar1.addEventListener("click", () => {
+botoesMatarTreino[1].addEventListener("click", () => {
     exerciciosOmbro[1].ultimoPeso = 0;
     exerciciosOmbro[1].executado = false;
     listaExercicios[1].classList.add('border', 'border-danger');
-    unilateral.click();
+    botoesAcordionTreino[2].click();
     })
 
-matar2.addEventListener("click", () => {
+botoesMatarTreino[2].addEventListener("click", () => {
     exerciciosOmbro[2].ultimoPeso = 0;
     exerciciosOmbro[2].executado = false;
     listaExercicios[2].classList.add('border', 'border-danger');
-    unilateral.click();
+    botoesAcordionTreino[2].click(); //quando for o último, ele clicka nele mesmo pra fechar
     })
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
@@ -92,7 +98,6 @@ salvarTreino.addEventListener("click", () => {
 })
 
 
-//tirar os nomes fixos de id e usar posição dos botões (salvar carga, peso e matar)
 //converter tudo pra foreach
 //ao invés de apresentar através de html, fazer o html ser exibido através de array
 //criar uma função pra deixar pro final do treino
