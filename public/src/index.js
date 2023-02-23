@@ -133,9 +133,26 @@ salvarTreino.addEventListener("click", () => {
 })
 
 
+
+//criando dinamicamente divs com base em array
+
+// Pegar a referencia de onde fazer o display do html
+var htmlExercicios = document.getElementById("htmlExercicios");
+
+for (var i = 0; i < exerciciosOmbro.length; i++) {
+  // Criar uma nova div para cada i
+  var div = document.createElement("div");
+  // inserir o conteudo de cada div
+  div.innerHTML = exerciciosOmbro[i].nome;
+  // adicionar a div a listagem de exercicios
+  htmlExercicios.appendChild(div);
+}
+
+
 //A FAZER AINDA:
 //ao invés de apresentar através de html, fazer o html ser exibido através de array
 //criar uma função pra deixar pro final do treino
+//inserir séries e repetições
 
 
 
