@@ -78,14 +78,19 @@
                 <input type="text" name="alimento" id="alimento" placeholder="Arroz">
                 <label for="quantida">Quantidade (g)</label>
                 <input type="text" name="quantidade" id="quantidade" placeholder="300">
-                <textarea placeholder="Observações, receitas, etc..."></textarea>
+                <textarea id="observacoesU" placeholder="Observações, receitas, etc..."></textarea>
                 <button id="inserirRefeicao">Inserir</button>
             </div>
         </div>
         <div style="height: 500px;" id="bomba">
             <h3>Plano Alimentar</h3>
             <div id="itemDieta">
-
+                <div id="apareceCafe" class="card border-secondary mb-3 d-flex-column" style="max-width: 18rem; display: none;">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">Café da Manhã</h5>
+                        <p id="divCafeP"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -115,7 +120,7 @@
             </div>
         </footer>
     </div>
-    <script src="src/nutricao.js"></script>
+    <script src="src/nutricao2.js"></script>
     <script src="src/aliments.js"></script>
 </body>
 

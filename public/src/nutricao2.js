@@ -1,0 +1,149 @@
+const divCafe = document.querySelector("#apareceCafe");
+const alimento = document.querySelector("#alimento");
+const quantidade = document.querySelector("#quantidade");
+
+const inserir = document.querySelector("#inserirRefeicao");
+const divCafeP = document.querySelector("#divCafeP");
+
+
+let cafeDaManha = {
+    alimento: [],
+    quantidade: [],
+    observacoes:[]
+}
+let lancheDaManha = {
+    alimento: [],
+    quantidade: [],
+    observacoes:[]
+}
+let almoco = {
+    alimento:[],
+    quantidade: [],
+    observacoes:[]
+}
+let lancheDaTarde = {
+    alimento:[],
+    quantidade: [],
+    observacoes:[]
+}
+let jantar = {
+    alimento:[],
+    quantidade: [],
+    observacoes:[]
+}
+let ceia = {
+    alimento:[],
+    quantidade: [],
+    observacoes:[]
+}
+let preTreino = {
+    alimento:[],
+    quantidade: [],
+    observacoes:[]
+}
+let posTreino = {
+    alimento:[],
+    quantidade: [],
+    observacoes:{}
+}
+inserir.addEventListener("click", addAlinementoEQtdade, mostraDiv);
+
+
+
+function addAlinementoEQtdade (){
+    let refeicaoSelecionada = refeicao.children[refeicao.selectedIndex];
+    const observacoesU = document.querySelector("#observacoesU").value;
+    if(refeicaoSelecionada.value === "cafeDaManha"){
+        cafeDaManha.alimento.push(alimento.value);
+        cafeDaManha.quantidade.push(parseInt(quantidade.value)+"g");
+        cafeDaManha.observacoes.push(observacoesU);
+    } else if(refeicaoSelecionada.value === "lancheDaManha"){
+        lancheDaManha.alimento.push(alimento.value);
+        lancheDaManha.quantidade.push(parseInt(quantidade.value));
+        lancheDaManha.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "almoco"){
+        almoco.alimento.push(alimento.value);
+        almoco.quantidade.push(parseInt(quantidade.value));
+        almoco.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "lancheDaTarde"){
+        lancheDaTarde.alimento.push(alimento.value);
+        lancheDaTarde.quantidade.push(parseInt(quantidade.value));
+        lancheDaTarde.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "jantar"){
+        jantar.alimento.push(alimento.value);
+        jantar.quantidade.push(parseInt(quantidade.value));
+        jantar.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "ceia"){
+        ceia.alimento.push(alimento.value);
+        ceia.quantidade.push(parseInt(quantidade.value));
+        ceia.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "preTreino"){
+        preTreino.alimento.push(alimento.value);
+        preTreino.quantidade.push(parseInt(quantidade.value));
+        preTreino.observacoes.push(observacoesU);
+    } else if (refeicaoSelecionada.value === "posTreino"){
+        posTreino.alimento.push(alimento.value);
+        posTreino.quantidade.push(parseInt(quantidade.value));
+        posTreino.observacoes.push(observacoesU);
+    }
+    mostraDiv();
+}
+function mostraDiv (){
+    if (cafeDaManha.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < cafeDaManha.alimento.length; i++){
+        divCafeP.textContent += cafeDaManha.alimento[i] + " " + cafeDaManha.quantidade[i] + "(" + cafeDaManha.observacoes[i] + ")" +" ; ";}
+    } else if (lancheDaManha.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < lancheDaManha.alimento.length; i++){
+        divCafeP.textContent += lancheDaManha.alimento[i] + " " + lancheDaManha.quantidade[i]+ "(" + lancheDaManha.observacoes[i] + ")" +" ; ";}
+    } else if (almoco.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < almoco.alimento.length; i++){
+        divCafeP.textContent += almoco.alimento[i] + " " + almoco.quantidade[i]+ "(" + almoco.observacoes[i] + ")" +" ; ";}
+    } else if (lancheDaTarde.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < lancheDaTarde.alimento.length; i++){
+        divCafeP.textContent += lancheDaTarde.alimento[i] + " " + lancheDaTarde.quantidade[i]+ "(" + lancheDaTarde.observacoes[i] + ")" +" ; ";}
+    } else if (jantar.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < jantar.alimento.length; i++){
+        divCafeP.textContent += jantar.alimento[i] + " " + jantar.quantidade[i]+ "(" + jantar.observacoes[i] + ")" +" ; ";}
+    } else if (preTreino.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < preTreino.alimento.length; i++){
+        divCafeP.textContent += preTreino.alimento[i] + " " + preTreino.quantidade[i]+ "(" + preTreino.observacoes[i] + ")" +" ; ";}
+    } else if (posTreino.alimento.length > 0){
+        divCafe.removeAttribute("style");
+        divCafe.style += "max-width: 18rem; display: flex";
+        divCafe.style.display= "block";
+        const divCafeP = document.querySelector("#divCafeP");
+        divCafeP.textContent = " ";
+        for(i=0; i < posTreino.alimento.length; i++){
+        divCafeP.textContent += posTreino.alimento[i] + " " + posTreino.quantidade[i]+ "(" + posTreino.observacoes[i] + ")" +" ; ";}
+    }
+}
