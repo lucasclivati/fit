@@ -50,11 +50,13 @@ var dataAtual = [day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + 
 
 //Salvar carga = Atualiza o array do peso, marca o exercicio como executado, adiciona borda verde no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
 //O último ele não abre o próximo exercício, apenas fecha o accordion do último, instigando a salvar o treino inteiro
+
+
 function salvarCarga(){
     for (let i = 0; i < exerciciosOmbro.length; i++){
         if(i  < exerciciosOmbro.length-1){
             botoesSalvarCarga[i].addEventListener("click", () => {
-                exerciciosOmbro[i].pesoAtual = novoPeso[0].value;
+                exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                 exerciciosOmbro[i].executado = true;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border');
@@ -62,14 +64,35 @@ function salvarCarga(){
                 botoesAcordionTreino[i+1].click();
                 novoPeso[i+1].focus();
                 });
+            novoPeso[i].addEventListener("keyup", (event) => {
+                    if(event.keyCode === 13){
+                        exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
+                        exerciciosOmbro[i].executado = true;
+                        exerciciosOmbro[i].dataRealizado = dataAtual;
+                        listaExercicios[i].classList.add('border');
+                        listaExercicios[i].classList.add('border-success');
+                        botoesAcordionTreino[i+1].click();
+                        novoPeso[i+1].focus(); 
+                    }
+                });
         } else {
             botoesSalvarCarga[i].addEventListener("click", () => {
-                exerciciosOmbro[i].pesoAtual = novoPeso[2].value;
+                exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                 exerciciosOmbro[i].executado = true;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
                 botoesAcordionTreino[i].click();
+                });
+            novoPeso[i].addEventListener("keyup", (event) => {
+                    if(event.keyCode === 13){
+                        exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
+                        exerciciosOmbro[i].executado = true;
+                        exerciciosOmbro[i].dataRealizado = dataAtual;
+                        listaExercicios[i].classList.add('border');
+                        listaExercicios[i].classList.add('border-success');
+                        botoesAcordionTreino[i].click();
+                    }
                 });
         }
     }
@@ -111,7 +134,6 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-//permitir usar enter para passar pro próximo treino
 //ao invés de apresentar através de html, fazer o html ser exibido através de array
 //criar uma função pra deixar pro final do treino
 
