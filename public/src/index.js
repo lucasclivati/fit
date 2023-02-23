@@ -144,13 +144,49 @@ var htmlExercicios = document.getElementById("htmlExercicios");
   let newDiv = document.createElement("div");
 
   // inserir o conteudo de cada div
-  let text = document.createTextNode(`
-  <div>
-  Exercício: ${exerciciosOmbro[i].nome} Peso: ${exerciciosOmbro[i].pesoAtual}, Data Executado: ${exerciciosOmbro.dataUltimoExec}
-  </div>
-  `);
-  
-  newDiv.appendChild(text);
+
+  let text = 
+  '<div class="accordion-item">'
+    +'<h2 class="accordion-header" id="heading' + i + '"></h2>'
+    +'<button id="'+ exerciciosOmbro[i].idTrigger +'" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">'
+        +'<div>'
+            +'<div>'
+             +'<h5 class="gradientFont fw-bold"><span>' + Number(i+1) + '</span>. '+exerciciosOmbro[i].nome+'</h5>'
+            +'</div>'
+                +'<div>'
+                +exerciciosOmbro[i].ultimoPeso+'kg em '+exerciciosOmbro[i].dataUltimoExec
+                +'</div>'
+            +'</div>'
+            +'</button>'
+            +'</h2>'
+        //     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        //     data-bs-parent="#accordionExample">
+        //     <div class="accordion-body">
+        //       <div class="input-group mb-3">
+        //         <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>
+        //         <button class="btn btn-primary" type="button" data-salvar-carga>
+        //           Salvar <span class="d-none d-md-inline-block">Carga</span>
+        //         </button>
+        //         <div class="dropdown-menu-end">
+        //           <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"
+        //             aria-expanded="false">
+        //             Ações
+        //           </button>
+        //           <ul class="dropdown-menu" data-bs-theme="dark">
+        //             <li><a class="dropdown-item text-white">Histórico Cargas</a></li>
+        //             <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>
+        //             <li>
+        //               <hr class="dropdown-divider">
+        //             </li>
+        //             <li><a class="dropdown-item text-danger" data-matar-treino="">Matar Exercício</a></li>
+        //           </ul>
+        //         </div>
+        //       </div>
+        //     </div>
+        //   </div>
+  +'</div>';
+
+  newDiv.innerHTML = text;
 
   // adicionar a div a listagem de exercicios
   htmlExercicios.appendChild(newDiv);
