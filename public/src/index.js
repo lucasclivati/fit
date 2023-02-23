@@ -145,9 +145,7 @@ var htmlExercicios = document.getElementById("htmlExercicios");
 
   // inserir o conteudo de cada div
   let text = document.createTextNode(`
-
   Exercício: ${exerciciosOmbro[i].nome} Peso: ${exerciciosOmbro[i].pesoAtual}, Data Executado: ${exerciciosOmbro.dataUltimoExec}
-  
   `);
   
   newDiv.appendChild(text);
