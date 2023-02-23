@@ -139,13 +139,21 @@ salvarTreino.addEventListener("click", () => {
 // Pegar a referencia de onde fazer o display do html
 var htmlExercicios = document.getElementById("htmlExercicios");
 
-for (var i = 0; i < exerciciosOmbro.length; i++) {
+ for (var i = 0; i < exerciciosOmbro.length; i++) {
   // Criar uma nova div para cada i
-  var div = document.createElement("div");
+  let newDiv = document.createElement("div");
+
   // inserir o conteudo de cada div
-  div.innerHTML = exerciciosOmbro[i].nome;
+  let text = document.createTextNode(`
+
+  Exercício: ${exerciciosOmbro[i].nome} Peso: ${exerciciosOmbro[i].pesoAtual}, Data Executado: ${exerciciosOmbro.dataUltimoExec}
+  
+  `);
+  
+  newDiv.appendChild(text);
+
   // adicionar a div a listagem de exercicios
-  htmlExercicios.appendChild(div);
+  htmlExercicios.appendChild(newDiv);
 }
 
 
