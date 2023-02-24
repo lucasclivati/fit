@@ -281,7 +281,7 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-//os treinos precisam ser exibidos em async
-//criar uma função pra deixar pro final do treino
-//quando clickar pra salvar, caso esteja vermelho, precisa remover a classe do vermelho e deixar verde
-//inserir séries e repetições
+// 1) quando clickar pra salvar, caso esteja vermelho, precisa remover a classe do vermelho e deixar verde
+// 2) os treinos precisam ser exibidos em async (eu acho), pois caso ele coloque o treino pro final, ele precisa mudar a ordem
+// 3) criar uma função pra deixar pro final do treino
+// 4) inserir séries e repetições de uma forma bonitinha
