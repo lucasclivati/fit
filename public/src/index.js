@@ -73,8 +73,8 @@ var accordionJs = document.getElementById("accordionJs");
                     +'        Ações'
                     +'                  </button>'
                     +'      <ul class="dropdown-menu" data-bs-theme="dark">'
-                    +'        <li><a class="dropdown-item text-white">Histórico Cargas</a></li>'
-                    +'        <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>'
+                    +'        <li data-historico-de-cargas><a class="dropdown-item text-white">Histórico Cargas</a></li>'
+                    +'        <li><a class="dropdown-item text-warning" data-deixar-fim="">Deixar pro fim</a></li>'
                     +'        <li>'
                     +'          <hr class="dropdown-divider">'
                     +'        </li>'
@@ -95,6 +95,7 @@ botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
 botoesMatarTreino = document.querySelectorAll('[data-matar-treino]');
 botoesAcordionTreino = document.querySelectorAll('.accordionExercicio');
 novoPeso = document.querySelectorAll('[data-novo-peso]');
+botoesDeixarFim = document.querySelectorAll('[data-deixar-fim]');
 
 
 var currentDate = new Date();
@@ -155,6 +156,7 @@ function salvarCarga(){
                         listaExercicios[i].classList.add('border');
                         listaExercicios[i].classList.add('border-success');
                         botoesAcordionTreino[i].click();
+                        salvarTreino.focus();
                     }
                 });
         }
@@ -172,7 +174,7 @@ function matarTreino(){
             botoesMatarTreino[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
-                exerciciosOmbro[i].dataRealizado = dataAtual;
+                exerciciosOmbro[i].dataRealizado = null;
                 listaExercicios[i].classList.remove('border-success');
                 listaExercicios[i].classList.add('border', 'border-danger');
                 botoesAcordionTreino[i+1].click();
@@ -181,7 +183,7 @@ function matarTreino(){
             botoesMatarTreino[i].addEventListener("click", () => {
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
-                exerciciosOmbro[i].dataRealizado = dataAtual;
+                exerciciosOmbro[i].dataRealizado = null;
                 listaExercicios[i].classList.remove('border-success');
                 listaExercicios[i].classList.add('border', 'border-danger');
                 botoesAcordionTreino[i].click();
@@ -191,6 +193,23 @@ function matarTreino(){
 }
 
 matarTreino();
+
+function deixarProFim(){
+    for (let i=0; i < exerciciosOmbro.length; i++){
+        if (i < exerciciosOmbro.length-1){
+            botoesDeixarFim[i].addEventListener("click", () => {
+                exerciciosOmbro[i].pesoAtual = 0;
+                exerciciosOmbro[i].executado = false;
+                exerciciosOmbro[i].dataRealizado = null;
+                listaExercicios[i].classList.remove('border-success');
+                listaExercicios[i].classList.remove('border-danger');
+                botoesAcordionTreino[i+1].click();
+                })
+        }
+    }
+}
+
+deixarProFim();
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
 salvarTreino.addEventListener("click", () => {
