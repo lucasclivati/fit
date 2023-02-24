@@ -198,7 +198,7 @@ matarTreino();
 function deixarProFim(){
     for (let i=0; i < exerciciosOmbro.length-1; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
-                exerciciosOmbro.splice(i,1);
+                exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
                 })
         }
     }
