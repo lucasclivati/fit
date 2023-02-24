@@ -40,6 +40,7 @@ let exerciciosOmbro = [
 //criando dinamicamente divs com base em array
 
 // Pegar a referencia de onde fazer o display do html
+
 var accordionJs = document.getElementById("accordionJs");
 
  for (let i = 0; i < exerciciosOmbro.length; i++) {
@@ -195,19 +196,13 @@ function matarTreino(){
 matarTreino();
 
 function deixarProFim(){
-    for (let i=0; i < exerciciosOmbro.length; i++){
-        if (i < exerciciosOmbro.length-1){
+    for (let i=0; i < exerciciosOmbro.length-1; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
-                exerciciosOmbro[i].pesoAtual = 0;
-                exerciciosOmbro[i].executado = false;
-                exerciciosOmbro[i].dataRealizado = null;
-                listaExercicios[i].classList.remove('border-success');
-                listaExercicios[i].classList.remove('border-danger');
-                botoesAcordionTreino[i+1].click();
+                exerciciosOmbro.splice(i,1);
                 })
         }
     }
-}
+
 
 deixarProFim();
 
