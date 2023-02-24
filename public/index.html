@@ -138,142 +138,18 @@
         <p class="text-secondary">Selecione <span class="gradientFont fw-bold">Elevação Frontal</span> ou <span
             class="gradientFont fw-bold">Elevação Unilateral</span><br>e veja seu avatar te auxiliar!</p>
       </div>
-      <div class="accordion container" id="accordionExample">
-        <form action="">
-          <div class="accordion-item" >
-            <h2 class="accordion-header" id="headingOne">
-              <button id="ambos" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <div>
-                  <div>
-                    <h5 class="gradientFont fw-bold"><span>1</span>. Elevação Lateral</h5>
-                  </div>
-                  <div>
-                    7kg em 01/02/23
-                  </div>
-                </div>
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="input-group mb-3">
-                  <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>
-                  <button class="btn btn-primary" type="button" data-salvar-carga>
-                    Salvar <span class="d-none d-md-inline-block">Carga</span>
-                  </button>
-                  <div class="dropdown-menu-end">
-                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu" data-bs-theme="dark">
-                      <li><a class="dropdown-item text-white">Histórico Cargas</a></li>
-                      <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item text-danger" data-matar-treino="">Matar Exercício</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button id="elevacaoFrontal" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <div>
-                  <div>
-                    <h5 class="gradientFont fw-bold"><span>2</span>. Elevação Frontal</h5>
-                  </div>
-                  <div>
-                    8kg em 01/02/23
-                  </div>
-                </div>
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="input-group mb-3">
-                  <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>
-                  <button class="btn btn-primary" type="button" data-salvar-carga>
-                    Salvar <span class="d-none d-md-inline-block">Carga</span>
-                  </button>
-                  <div class="dropdown-menu-end">
-                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu" data-bs-theme="dark">
-                      <li><a class="dropdown-item text-white" >Histórico Cargas</a></li>
-                      <li><a class="dropdown-item text-warning" >Deixar pro fim</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item text-danger" data-matar-treino>Matar Exercício</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button id="unilateral" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <div>
-                  <div>
-                    <h5 class="gradientFont fw-bold"><span>3</span>. Elevação Unilateral</h5>
-                  </div>
-                  <div>
-                    6kg em 01/02/23
-                  </div>
-                </div>
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="input-group mb-3">
-                  <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>
-                  <button class="btn btn-primary" type="button" data-salvar-carga>
-                    Salvar <span class="d-none d-md-inline-block">Carga</span>
-                  </button>
-                  <div class="dropdown-menu-end">
-                    <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu" data-bs-theme="dark">
-                      <li><a class="dropdown-item text-white">Histórico Cargas</a></li>
-                      <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item text-danger" data-matar-treino>Matar Exercício</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-grid mx-auto d-md-flex justify-content-center mt-3 mb-3">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" id="salvarTreino">Salvar Treino</button>
-          </div>
-          <div class="alert alert-success alert-dismissible fade" id="notificacaoTreinoSalvo"  role="alert">
-            Treino salvo com sucesso.
-              <button type="button" class="btn-close px-4 me-md-2" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        </form>
+      <div class="accordion container" id="accordionJs">
+      </div>
+      <div class="d-grid mx-auto d-md-flex justify-content-center mt-3 mb-3">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" id="salvarTreino">Salvar Treino</button>
+      </div>
+      <div class="alert alert-success alert-dismissible fade" id="notificacaoTreinoSalvo"  role="alert">
+        Treino salvo com sucesso.
+          <button type="button" class="btn-close px-4 me-md-2" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       </div>
   </main>
-    <div id="htmlExercicios">
-    </div>   
-  <div class="container">
-  </div>
+
   <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-lg-7 text-center text-lg-start">
