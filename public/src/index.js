@@ -5,6 +5,8 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
         "dataRealizado": null,
+        "series": 3,
+        "repeticoes": 12,
         "unidadePeso": "kg",
         "idTrigger": "ambos",
         "executado": false
@@ -15,6 +17,8 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
         "dataRealizado": null,
+        "series": 3,
+        "repeticoes": 10,
         "unidadePeso": "kg",
         "idTrigger": "elevacaoFrontal",
         "executado": false
@@ -25,30 +29,29 @@ let exerciciosOmbro = [
         "dataUltimoExec": "01/02/2023",
         "pesoAtual": 0,
         "dataRealizado": null,
+        "series": 3,
+        "repeticoes": 15,
         "unidadePeso": "kg",
         "idTrigger": "unilateral",
         "executado": false
     }
 ];
 
-
-
 //criando dinamicamente divs com base em array
 
 // Pegar a referencia de onde fazer o display do html
 var accordionJs = document.getElementById("accordionJs");
 
- for (var i = 0; i < exerciciosOmbro.length; i++) {
+ for (let i = 0; i < exerciciosOmbro.length; i++) {
     // Criar uma nova div para cada i
     // Verifica se é a primeira, no meio ou o último accordion, cada um é formatado de um jeito.
-    if (i === 0){
         let text = 
         '<div class="accordion-item">'
             +'<h2 class="accordion-header" id="heading' + i + '">'
             +'<button id="'+ exerciciosOmbro[i].idTrigger +'" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">'
                 +'<div>'
                     +'<div>'
-                    +'<h5 class="gradientFont fw-bold"><span>' + Number(i+1) + '</span>. '+exerciciosOmbro[i].nome+'</h5>'
+                    +'<h5 class="gradientFont fw-bold">' + Number(i+1) + '. '+exerciciosOmbro[i].nome+' ('+exerciciosOmbro[i].series+' x '+ exerciciosOmbro[i].repeticoes + ' repetições)'+'</h5>'
                     +'</div>'
                         +'<div>'
                         +exerciciosOmbro[i].ultimoPeso+'kg em '+exerciciosOmbro[i].dataUltimoExec
@@ -56,7 +59,7 @@ var accordionJs = document.getElementById("accordionJs");
                     +'</div>'
                     +'</button>'
                     +'</h2>'
-                    +'<div id="collapse'+i+'" class="accordion-collapse collapse show" aria-labelledby="heading'+i+'"'
+                    +'<div id="collapse'+i+'" class="accordion-collapse collapse '+ (i===0 ? 'show' : '')+ '" aria-labelledby="heading'+i+'"'
                     + 'data-bs-parent="#accordionJs">'
                     +'<div class="accordion-body">'
                     +'  <div class="input-group mb-3">'
@@ -85,97 +88,7 @@ var accordionJs = document.getElementById("accordionJs");
         let newDiv = document.createElement("div");
         newDiv.innerHTML = text;
         accordionJs.appendChild(newDiv);
-     } else if (i < exerciciosOmbro.length-1){
-        let text = 
-        '<div class="accordion-item">'
-        +'<h2 class="accordion-header" id="heading' + i + '">'
-        +'<button id="'+ exerciciosOmbro[i].idTrigger +'" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">'
-            +'<div>'
-                +'<div>'
-                +'<h5 class="gradientFont fw-bold"><span>' + Number(i+1) + '</span>. '+exerciciosOmbro[i].nome+'</h5>'
-                +'</div>'
-                    +'<div>'
-                    +exerciciosOmbro[i].ultimoPeso+'kg em '+exerciciosOmbro[i].dataUltimoExec
-                    +'</div>'
-                +'</div>'
-                +'</button>'
-                +'</h2>'
-                +'<div id="collapse'+i+'" class="accordion-collapse collapse rounded-0" aria-labelledby="heading'+i+'"'
-                + 'data-bs-parent="#accordionJs">'
-                +'<div class="accordion-body">'
-                +'  <div class="input-group mb-3">'
-                +'    <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>'
-                +'    <button class="btn btn-primary" type="button" data-salvar-carga>'
-                +'      Salvar <span class="d-none d-md-inline-block">Carga</span>'
-                +'    </button>'
-                +'    <div class="dropdown-menu-end">'
-                +'      <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"'
-                +'        aria-expanded="false">'
-                +'        Ações'
-                +'                  </button>'
-                +'      <ul class="dropdown-menu" data-bs-theme="dark">'
-                +'        <li><a class="dropdown-item text-white">Histórico Cargas</a></li>'
-                +'        <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>'
-                +'        <li>'
-                +'          <hr class="dropdown-divider">'
-                +'        </li>'
-                +'        <li><a class="dropdown-item text-danger" data-matar-treino="">Matar Exercício</a></li>'
-                +'      </ul>'
-                +'    </div>'
-                +'  </div>'
-                +'</div>'
-            +'  </div>'
-        +'</div>';
-        let newDiv = document.createElement("div");
-    newDiv.innerHTML = text;
-    accordionJs.appendChild(newDiv);
-    } else {
-        let text = 
-        '<div class="accordion-item">'
-            +'<h2 class="accordion-header" id="heading' + i + '">'
-                +'<button id="'+ exerciciosOmbro[i].idTrigger +'" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">'
-                     +'<div>'
-                        +'<div>'
-                             +'<h5 class="gradientFont fw-bold"><span>' + Number(i+1) + '</span>. '+exerciciosOmbro[i].nome+'</h5>'
-                        +'</div>'
-                         +'<div>'
-                              +exerciciosOmbro[i].ultimoPeso+'kg em '+exerciciosOmbro[i].dataUltimoExec
-                         +'</div>'
-                    +'</div>'
-                +'</button>'
-            +'</h2>'
-                +'<div id="collapse'+i+'" class="accordion-collapse collapse rounded-0" aria-labelledby="heading'+i+'"'
-                + 'data-bs-parent="#accordionJs">'
-                +'<div class="accordion-body">'
-                +'  <div class="input-group mb-3">'
-                +'    <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>'
-                +'    <button class="btn btn-primary" type="button" data-salvar-carga>'
-                +'      Salvar <span class="d-none d-md-inline-block">Carga</span>'
-                +'    </button>'
-                +'    <div class="dropdown-menu-end">'
-                +'      <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"'
-                +'        aria-expanded="false">'
-                +'        Ações'
-                +'                  </button>'
-                +'      <ul class="dropdown-menu" data-bs-theme="dark">'
-                +'        <li><a class="dropdown-item text-white">Histórico Cargas</a></li>'
-                +'        <li><a class="dropdown-item text-warning">Deixar pro fim</a></li>'
-                +'        <li>'
-                +'          <hr class="dropdown-divider">'
-                +'        </li>'
-                +'        <li><a class="dropdown-item text-danger" data-matar-treino="">Matar Exercício</a></li>'
-                +'      </ul>'
-                +'    </div>'
-                +'  </div>'
-                +'</div>'
-            +'  </div>'
-        +'</div>';
-
-        let newDiv = document.createElement("div");
-    newDiv.innerHTML = text;
-    accordionJs.appendChild(newDiv);
     }
-}
 
 listaExercicios = document.querySelectorAll('.accordion-item');
 botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
@@ -287,7 +200,4 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-// 1) inserir séries e repetições de uma forma bonitinha
-// 2) os treinos precisam ser exibidos em async (eu acho), pois caso ele coloque o treino pro final, ele precisa mudar a ordem
-// 3) criar uma função pra deixar pro final do treino
-// 
+// 1) criar uma função pra deixar pro final do treino
