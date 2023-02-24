@@ -205,6 +205,7 @@ function salvarCarga(){
                 exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                 exerciciosOmbro[i].executado = true;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
+                listaExercicios[i].classList.remove('border-danger');
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
                 botoesAcordionTreino[i+1].click();
@@ -215,6 +216,7 @@ function salvarCarga(){
                         exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                         exerciciosOmbro[i].executado = true;
                         exerciciosOmbro[i].dataRealizado = dataAtual;
+                        listaExercicios[i].classList.remove('border-danger');
                         listaExercicios[i].classList.add('border');
                         listaExercicios[i].classList.add('border-success');
                         botoesAcordionTreino[i+1].click();
@@ -226,6 +228,7 @@ function salvarCarga(){
                 exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                 exerciciosOmbro[i].executado = true;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
+                listaExercicios[i].classList.remove('border-danger');
                 listaExercicios[i].classList.add('border');
                 listaExercicios[i].classList.add('border-success');
                 botoesAcordionTreino[i].click();
@@ -235,6 +238,7 @@ function salvarCarga(){
                         exerciciosOmbro[i].pesoAtual = novoPeso[i].value;
                         exerciciosOmbro[i].executado = true;
                         exerciciosOmbro[i].dataRealizado = dataAtual;
+                        listaExercicios[i].classList.remove('border-danger');
                         listaExercicios[i].classList.add('border');
                         listaExercicios[i].classList.add('border-success');
                         botoesAcordionTreino[i].click();
@@ -256,6 +260,7 @@ function matarTreino(){
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
+                listaExercicios[i].classList.remove('border-success');
                 listaExercicios[i].classList.add('border', 'border-danger');
                 botoesAcordionTreino[i+1].click();
                 })
@@ -264,8 +269,9 @@ function matarTreino(){
                 exerciciosOmbro[i].pesoAtual = 0;
                 exerciciosOmbro[i].executado = false;
                 exerciciosOmbro[i].dataRealizado = dataAtual;
+                listaExercicios[i].classList.remove('border-success');
                 listaExercicios[i].classList.add('border', 'border-danger');
-                botoesAcordionTreino[i].click(); //quando for o último, ele clicka nele mesmo pra fechar
+                botoesAcordionTreino[i].click();
                 })
         }
     }
@@ -281,7 +287,7 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-// 1) quando clickar pra salvar, caso esteja vermelho, precisa remover a classe do vermelho e deixar verde
+// 1) inserir séries e repetições de uma forma bonitinha
 // 2) os treinos precisam ser exibidos em async (eu acho), pois caso ele coloque o treino pro final, ele precisa mudar a ordem
 // 3) criar uma função pra deixar pro final do treino
-// 4) inserir séries e repetições de uma forma bonitinha
+// 
