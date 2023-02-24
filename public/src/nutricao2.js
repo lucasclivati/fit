@@ -121,7 +121,7 @@ function mostraDiv (){
             divCafe.style.display= "block";
             divCafeP.textContent = " ";
             for(i=0; i < cafeDaManha.alimento.length; i++){
-            divCafeP.textContent += cafeDaManha.alimento[i] + " " + cafeDaManha.quantidade[i] + "(" + cafeDaManha.observacoes[i] + ")" +" ; ";}
+            divCafeP.textContent += cafeDaManha.alimento[i] + " " + cafeDaManha.quantidade[i] + " (" + cafeDaManha.observacoes[i] + ")" +" ; ";}
         break;
         case "lancheDaManha":
             divLancheDaM.removeAttribute("style");
@@ -129,7 +129,7 @@ function mostraDiv (){
             divLancheDaM.style.display= "block";
             divLancheDaMP.textContent = " ";
             for(i=0; i < lancheDaManha.alimento.length; i++){
-            divLancheDaMP.textContent += lancheDaManha.alimento[i] + " " + lancheDaManha.quantidade[i]+ "(" + lancheDaManha.observacoes[i] + ")" +" ; ";}
+            divLancheDaMP.textContent += lancheDaManha.alimento[i] + " " + lancheDaManha.quantidade[i]+ " (" + lancheDaManha.observacoes[i] + ")" +" ; ";}
         break;
         case "almoco":
             divAlmoco.removeAttribute("style");
@@ -137,7 +137,7 @@ function mostraDiv (){
             divAlmoco.style.display= "block";
             divAlmocoP.textContent = " ";
             for(i=0; i < almoco.alimento.length; i++){
-            divAlmocoP.textContent += almoco.alimento[i] + " " + almoco.quantidade[i]+ "(" + almoco.observacoes[i] + ")" +" ; ";}
+            divAlmocoP.textContent += almoco.alimento[i] + " " + almoco.quantidade[i]+ " (" + almoco.observacoes[i] + ")" +" ; ";}
         break;
         case "lancheDaTarde":
             divLancheDaT.removeAttribute("style");
@@ -145,7 +145,7 @@ function mostraDiv (){
             divLancheDaT.style.display= "block";
             divLancheDaTP.textContent = " ";
             for(i=0; i < lancheDaTarde.alimento.length; i++){
-            divLancheDaTP.textContent += lancheDaTarde.alimento[i] + " " + lancheDaTarde.quantidade[i]+ "(" + lancheDaTarde.observacoes[i] + ")" +" ; ";}
+            divLancheDaTP.textContent += lancheDaTarde.alimento[i] + " " + lancheDaTarde.quantidade[i]+ " (" + lancheDaTarde.observacoes[i] + ")" +" ; ";}
         break;
         case "jantar":
             divJanta.removeAttribute("style");
@@ -153,7 +153,7 @@ function mostraDiv (){
             divJanta.style.display= "block";
             divJantaP.textContent = " ";
         for(i=0; i < jantar.alimento.length; i++){
-            divJantaP.textContent += jantar.alimento[i] + " " + jantar.quantidade[i]+ "(" + jantar.observacoes[i] + ")" +" ; ";}
+            divJantaP.textContent += jantar.alimento[i] + " " + jantar.quantidade[i]+ " (" + jantar.observacoes[i] + ")" +" ; ";}
         break;
         case "ceia":
             divCeia.removeAttribute("style");
@@ -161,7 +161,7 @@ function mostraDiv (){
             divCeia.style.display= "block";
             divCeiaP.textContent = " ";
             for(i=0; i < ceia.alimento.length; i++){
-            divCeiaP.textContent += ceia.alimento[i] + " " + ceia.quantidade[i]+ "(" + ceia.observacoes[i] + ")" +" ; ";}
+            divCeiaP.textContent += ceia.alimento[i] + " " + ceia.quantidade[i]+ " (" + ceia.observacoes[i] + ")" +" ; ";}
         break;
         case "preTreino":
             divPreT.removeAttribute("style");
@@ -169,7 +169,7 @@ function mostraDiv (){
             divPreT.style.display= "block";
             divPreTP.textContent = " ";
             for(i=0; i < preTreino.alimento.length; i++){
-            divPreTP.textContent += preTreino.alimento[i] + " " + preTreino.quantidade[i]+ "(" + preTreino.observacoes[i] + ")" +" ; ";}
+            divPreTP.textContent += preTreino.alimento[i] + " " + preTreino.quantidade[i]+ " (" + preTreino.observacoes[i] + ")" +" ; ";}
         break;
         case "posTreino":
             divPosT.removeAttribute("style");
@@ -177,7 +177,7 @@ function mostraDiv (){
             divPosT.style.display= "block";
             divPosTP.textContent = " ";
             for(i=0; i < posTreino.alimento.length; i++){
-            divPosTP.textContent += posTreino.alimento[i] + " " + posTreino.quantidade[i]+ "(" + posTreino.observacoes[i] + ")" +" ; ";}
+            divPosTP.textContent += posTreino.alimento[i] + " " + posTreino.quantidade[i]+ " (" + posTreino.observacoes[i] + ")" +" ; ";}
         break;
         default:
             break;
