@@ -47,8 +47,7 @@ function gerarDivExercicio(i) {
     // Criar uma nova div para cada i
     // Verifica se é a primeira, no meio ou o último accordion, cada um é formatado de um jeito.
         let text = 
-        '<div class="accordion-item">'
-            +'<h2 class="accordion-header" id="heading' + i + '">'
+            '<h2 class="accordion-header" id="heading' + i + '">'
             +'<button id="'+ exerciciosOmbro[i].idTrigger +'" class="accordion-button collapsed accordionExercicio" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">'
                 +'<div>'
                     +'<div>'
@@ -84,9 +83,9 @@ function gerarDivExercicio(i) {
                     +'    </div>'
                     +'  </div>'
                     +'</div>'
-                +'  </div>'
-            +'</div>';
+                +'  </div>';
         let newDiv = document.createElement("div");
+        newDiv.className +="accordion-item";
         newDiv.innerHTML = text;
         accordionJs.appendChild(newDiv);
     };
@@ -204,8 +203,8 @@ function deixarProFim(){
     for (let i=0; i < exerciciosOmbro.length; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
                 listaExercicios[i].remove();
-                exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
-                gerarDivExercicio(exerciciosOmbro.length-1);
+                // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+                gerarDivExercicio(i);
                 })
         }
     }
