@@ -43,6 +43,7 @@ let exerciciosOmbro = [
 
 var accordionJs = document.getElementById("accordionJs");
 
+function gerarDivsExercicios(){
  for (let i = 0; i < exerciciosOmbro.length; i++) {
     // Criar uma nova div para cada i
     // Verifica se é a primeira, no meio ou o último accordion, cada um é formatado de um jeito.
@@ -90,6 +91,9 @@ var accordionJs = document.getElementById("accordionJs");
         newDiv.innerHTML = text;
         accordionJs.appendChild(newDiv);
     }
+}
+
+gerarDivsExercicios();
 
 listaExercicios = document.querySelectorAll('.accordion-item');
 botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
@@ -199,6 +203,8 @@ function deixarProFim(){
     for (let i=0; i < exerciciosOmbro.length-1; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
                 exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+                // accordionJs.remove();
+                gerarDivsExercicios();
                 })
         }
     }
@@ -214,4 +220,4 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-// 1) criar uma função pra deixar pro final do treino
+// 1) Fazer a div mudar dinamicamente conforme o array
