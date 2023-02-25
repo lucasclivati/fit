@@ -43,8 +43,7 @@ let exerciciosOmbro = [
 
 var accordionJs = document.getElementById("accordionJs");
 
-function gerarDivsExercicios(){
- for (let i = 0; i < exerciciosOmbro.length; i++) {
+function gerarDivExercicio(i) {
     // Criar uma nova div para cada i
     // Verifica se é a primeira, no meio ou o último accordion, cada um é formatado de um jeito.
         let text = 
@@ -90,10 +89,12 @@ function gerarDivsExercicios(){
         let newDiv = document.createElement("div");
         newDiv.innerHTML = text;
         accordionJs.appendChild(newDiv);
-    }
-}
+    };
 
-gerarDivsExercicios();
+for (let i = 0; i < exerciciosOmbro.length; i++){
+    gerarDivExercicio(i);
+};
+
 
 listaExercicios = document.querySelectorAll('.accordion-item');
 botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
@@ -200,11 +201,11 @@ function matarTreino(){
 matarTreino();
 
 function deixarProFim(){
-    for (let i=0; i < exerciciosOmbro.length-1; i++){
+    for (let i=0; i < exerciciosOmbro.length; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
                 exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
-                // accordionJs.remove();
-                gerarDivsExercicios();
+                listaExercicios[i].remove();
+                gerarDivExercicio(i);
                 })
         }
     }
