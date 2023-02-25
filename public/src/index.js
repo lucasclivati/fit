@@ -203,9 +203,9 @@ matarTreino();
 function deixarProFim(){
     for (let i=0; i < exerciciosOmbro.length; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
-                exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
                 listaExercicios[i].remove();
-                gerarDivExercicio(i);
+                exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+                gerarDivExercicio(exerciciosOmbro.length-1);
                 })
         }
     }
@@ -221,4 +221,4 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-// 1) depois de deixar pro fim, não funciona o salvar/matar treino das divs novas que foram inseridas.
+// 1) precisa gerar todas as divs novamente ao mudar pro fim (os numeros estão ficando errados, ou alterar o número do último para ficar diferente dos demais)
