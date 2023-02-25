@@ -221,4 +221,4 @@ salvarTreino.addEventListener("click", () => {
 
 
 //A FAZER AINDA:
-// 1) Fazer a div mudar dinamicamente conforme o array
+// 1) depois de deixar pro fim, não funciona o salvar/matar treino das divs novas que foram inseridas.
