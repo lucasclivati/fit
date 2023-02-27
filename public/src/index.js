@@ -61,8 +61,8 @@ function gerarDivExercicio(i) {
                     + 'data-bs-parent="#accordionJs">'
                     +'<div class="accordion-body">'
                     +'  <div class="input-group mb-3">'
-                    +'    <input type="number" placeholder="Carga atual (kg)" class="form-control" aria-label="" data-novo-peso>'
-                    +'    <button class="btn btn-primary" type="button" data-salvar-carga>'
+                    +'    <input type="number" placeholder="Carga atual (kg)" class="form-control novoPeso" aria-label="">'
+                    +'    <button class="btn btn-primary salvarCarga" type="button">'
                     +'      Salvar <span class="d-none d-md-inline-block">Carga</span>'
                     +'    </button>'
                     +'    <div class="dropdown-menu-end">'
@@ -71,12 +71,12 @@ function gerarDivExercicio(i) {
                     +'        Ações'
                     +'                  </button>'
                     +'      <ul class="dropdown-menu" data-bs-theme="dark">'
-                    +'        <li data-historico-de-cargas><a class="dropdown-item text-white">Histórico Cargas</a></li>'
-                    +'        <li><a class="dropdown-item text-warning" data-deixar-fim="">Deixar pro fim</a></li>'
+                    +'        <li><a class="dropdown-item text-white historicoCargas">Histórico Cargas</a></li>'
+                    //+'        <li><a class="dropdown-item text-warning deixarFim">Deixar pro fim</a></li>'
                     +'        <li>'
                     +'          <hr class="dropdown-divider">'
                     +'        </li>'
-                    +'        <li><a class="dropdown-item text-danger" data-matar-treino="">Matar Exercício</a></li>'
+                    +'        <li><a class="dropdown-item text-danger matarTreino">Matar Exercício</a></li>'
                     +'      </ul>'
                     +'    </div>'
                     +'  </div>'
@@ -94,12 +94,12 @@ for (let i = 0; i < exerciciosOmbro.length; i++){
 
 accordionJs = document.getElementById("accordionJs");
 let listaExerciciosLive = accordionJs.childNodes; //lista de exercicios html live
-listaExercicios = document.querySelectorAll('.accordion-item'); //lista de exercicios estático
-botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
-botoesMatarTreino = document.querySelectorAll('[data-matar-treino]');
-botoesAcordionTreino = document.querySelectorAll('.accordionExercicio');
-novoPeso = document.querySelectorAll('[data-novo-peso]');
-botoesDeixarFim = document.querySelectorAll('[data-deixar-fim]');
+let listaExercicios = document.querySelectorAll('.accordion-item'); //lista de exercicios estático
+let botoesSalvarCarga = document.getElementsByClassName("salvarCarga");
+let botoesMatarTreino = document.getElementsByClassName("matarTreino");
+let botoesAcordionTreino = document.getElementsByClassName("accordionExercicio");
+let novoPeso = document.getElementsByClassName("novoPeso");
+let botoesDeixarFim = document.getElementsByClassName("deixarFim");
 
 
 var currentDate = new Date();
@@ -190,19 +190,25 @@ for (let i=0; i < exerciciosOmbro.length; i++){
     }
 }
 
-for (let i=0; i < exerciciosOmbro.length; i++){
-    botoesDeixarFim[i].addEventListener("click", () =>{
-        listaExercicios[i].remove();
-        // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
-        gerarDivExercicio(i);
-        }
-    )
-};
+
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
 salvarTreino.addEventListener("click", () => {
     document.getElementById('notificacaoTreinoSalvo').classList.add('show');
 })
+
+
+//removida a funcionalidade de deixar pro final
+
+// for (let i=0; i < exerciciosOmbro.length; i++){
+//     botoesDeixarFim[i].addEventListener("click", () =>{
+//         // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+//         listaExercicios[i].remove();
+//         gerarDivExercicio(i);
+//         }
+//     )
+// }
+
 
 //A FAZER AINDA:
 // 1) precisa gerar todas as divs novamente ao mudar pro fim (os numeros estão ficando errados, ou alterar o número do último para ficar diferente dos demais)
