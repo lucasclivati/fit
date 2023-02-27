@@ -26,7 +26,13 @@ let almoco = {
     quantidadeDigitada: [quantidade.value]
 };
 
-inserir.addEventListener("click", escreveHtml);
+inserir.addEventListener("click", ()=>{
+    if(alimento.value != null && quantidade.value > 0){
+        escreveHtml();
+    } else {
+        alert(`Você deve inserir um alimento e sua quantidade!`)
+    }
+});
 
 function escreveHtml (){
     criaDivCard();

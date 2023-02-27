@@ -77,3 +77,13 @@ button.btndegrade:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  
+}
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}

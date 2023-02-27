@@ -18,7 +18,7 @@ const divJantaP = document.querySelector("#divJantaP");
 const divCeiaP = document.querySelector("#divCeiaP");
 const divPreTP = document.querySelector("#divPreTP");
 const divPosTP = document.querySelector("#divPosTP");
-
+const dataForm = document.querySelector("form");
 
 let cafeDaManha = {
     alimento: [],
@@ -60,7 +60,15 @@ let posTreino = {
     quantidade: [],
     observacoes:[]
 }
-inserir.addEventListener("click", addAlinementoEQtdade, mostraDiv);
+inserir.addEventListener("click", ()=>{
+    if(alimento.value != null && quantidade.value > 0){
+        addAlinementoEQtdade();
+        mostraDiv();
+        dataForm.reset();
+    } else {
+        alert(`Você deve inserir um alimento e sua quantidade!`)
+    }
+});
 
 
 
