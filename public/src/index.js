@@ -41,8 +41,6 @@ let exerciciosOmbro = [
 
 // Pegar a referencia de onde fazer o display do html
 
-var accordionJs = document.getElementById("accordionJs");
-
 function gerarDivExercicio(i) {
     // Criar uma nova div para cada i
     // Verifica se é a primeira, no meio ou o último accordion, cada um é formatado de um jeito.
@@ -94,8 +92,9 @@ for (let i = 0; i < exerciciosOmbro.length; i++){
     gerarDivExercicio(i);
 };
 
-
-listaExercicios = document.querySelectorAll('.accordion-item');
+accordionJs = document.getElementById("accordionJs");
+let listaExerciciosLive = accordionJs.childNodes; //lista de exercicios html live
+listaExercicios = document.querySelectorAll('.accordion-item'); //lista de exercicios estático
 botoesSalvarCarga = document.querySelectorAll('[data-salvar-carga]');
 botoesMatarTreino = document.querySelectorAll('[data-matar-treino]');
 botoesAcordionTreino = document.querySelectorAll('.accordionExercicio');
