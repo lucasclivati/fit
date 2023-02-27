@@ -199,18 +199,18 @@ function matarTreino(){
 
 matarTreino();
 
-function deixarProFim(){
-    for (let i=0; i < exerciciosOmbro.length; i++){
+
+ for (let i=0; i < exerciciosOmbro.length; i++){
             botoesDeixarFim[i].addEventListener("click", () => {
-                listaExercicios[i].remove();
-                // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
-                gerarDivExercicio(i);
-                })
-        }
-    }
 
 
-deixarProFim();
+
+
+deixarProFim(){
+    listaExercicios[i].remove();
+    // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+    gerarDivExercicio(i);
+}
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
 salvarTreino.addEventListener("click", () => {
