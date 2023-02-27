@@ -93,7 +93,7 @@ for (let i = 0; i < exerciciosOmbro.length; i++){
 };
 
 accordionJs = document.getElementById("accordionJs");
-let listaExerciciosLive = accordionJs.childNodes; //lista de exercicios html live
+//let listaExerciciosLive = accordionJs.childNodes; //lista de exercicios html live
 let listaExercicios = document.querySelectorAll('.accordion-item'); //lista de exercicios estático
 let botoesSalvarCarga = document.getElementsByClassName("salvarCarga");
 let botoesMatarTreino = document.getElementsByClassName("matarTreino");
