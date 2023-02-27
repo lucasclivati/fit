@@ -173,44 +173,41 @@ salvarCarga();
 //Matar treino = Atualiza o array do peso atual = 0, marca o exercicio como não executado, adiciona borda vermelha no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
 //O último ele não abre o próximo exercício, apenas fecha o accordion do último, instigando a salvar o treino inteiro
 
-function matarTreino(){
-    for (let i=0; i < exerciciosOmbro.length; i++){
-        if (i < exerciciosOmbro.length-1){
-            botoesMatarTreino[i].addEventListener("click", () => {
-                exerciciosOmbro[i].pesoAtual = 0;
-                exerciciosOmbro[i].executado = false;
-                exerciciosOmbro[i].dataRealizado = null;
-                listaExercicios[i].classList.remove('border-success');
-                listaExercicios[i].classList.add('border', 'border-danger');
-                botoesAcordionTreino[i+1].click();
-                })
-        } else {
-            botoesMatarTreino[i].addEventListener("click", () => {
-                exerciciosOmbro[i].pesoAtual = 0;
-                exerciciosOmbro[i].executado = false;
-                exerciciosOmbro[i].dataRealizado = null;
-                listaExercicios[i].classList.remove('border-success');
-                listaExercicios[i].classList.add('border', 'border-danger');
-                botoesAcordionTreino[i].click();
-                })
-        }
+
+for (let i=0; i < exerciciosOmbro.length; i++){
+    if (i < exerciciosOmbro.length-1){
+        botoesMatarTreino[i].addEventListener("click", () => {
+            exerciciosOmbro[i].pesoAtual = 0;
+            exerciciosOmbro[i].executado = false;
+            exerciciosOmbro[i].dataRealizado = null;
+            listaExercicios[i].classList.remove('border-success');
+            listaExercicios[i].classList.add('border', 'border-danger');
+            botoesAcordionTreino[i+1].click();
+        })
+    } else {
+        botoesMatarTreino[i].addEventListener("click", () => {
+            exerciciosOmbro[i].pesoAtual = 0;
+            exerciciosOmbro[i].executado = false;
+            exerciciosOmbro[i].dataRealizado = null;
+            listaExercicios[i].classList.remove('border-success');
+            listaExercicios[i].classList.add('border', 'border-danger');
+            botoesAcordionTreino[i].click();
+        })
     }
 }
 
-matarTreino();
 
 
- for (let i=0; i < exerciciosOmbro.length; i++){
-            botoesDeixarFim[i].addEventListener("click", () => {
-
-
-
-
-deixarProFim(){
-    listaExercicios[i].remove();
-    // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
-    gerarDivExercicio(i);
+for (let i=0; i < exerciciosOmbro.length; i++){
+    botoesDeixarFim[i].addEventListener("click", () =>{
+        listaExercicios[i].remove();
+        // exerciciosOmbro.push(exerciciosOmbro.splice(i,1)[0]);
+        gerarDivExercicio(i);
+        }
+    )
 }
+
+
 
 //ao salvar o treino, aparece uma notificação que o treino foi salvo
 salvarTreino.addEventListener("click", () => {
