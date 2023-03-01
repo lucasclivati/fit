@@ -120,15 +120,6 @@ var dataAtual = [day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + 
 //     })
 // });
 
-// function acoesBotoes(operacaoBotao){
-//     if(operacaoBotao === "Salvar"){
-//         console.log("Salvar")
-//     } else {
-//         console.log("outros botoes")
-//     }
-// };
-
-
 //Salvar carga = Atualiza o array do peso, marca o exercicio como executado, adiciona borda verde no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
 //O último ele não abre o próximo exercício, apenas fecha o accordion do último, instigando a salvar o treino inteiro
 
