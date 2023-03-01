@@ -63,7 +63,7 @@ function gerarDivExercicio(i) {
                     +'  <div class="input-group mb-3">'
                     +'    <input type="number" placeholder="Carga atual (kg)" class="form-control novoPeso" aria-label="">'
                     +'    <button class="btn btn-primary salvarCarga" type="button">'
-                    +'      Salvar <span class="d-none d-md-inline-block">Carga</span>'
+                    +'      Salvar <span class="d-none d-md-inline-block"></span>'
                     +'    </button>'
                     +'    <div class="dropdown-menu-end">'
                     +'      <button type="button" class="btn btn-dark dropdown-toggle rounded-start-0" data-bs-toggle="dropdown"'
@@ -95,11 +95,12 @@ for (let i = 0; i < exerciciosOmbro.length; i++){
 accordionJs = document.getElementById("accordionJs");
 //let listaExerciciosLive = accordionJs.childNodes; //lista de exercicios html live
 let listaExercicios = document.querySelectorAll('.accordion-item'); //lista de exercicios estático
-let botoesSalvarCarga = document.getElementsByClassName("salvarCarga");
-let botoesMatarTreino = document.getElementsByClassName("matarTreino");
-let botoesAcordionTreino = document.getElementsByClassName("accordionExercicio");
-let novoPeso = document.getElementsByClassName("novoPeso");
-let botoesDeixarFim = document.getElementsByClassName("deixarFim");
+let botoesSalvarCarga = document.querySelectorAll(".salvarCarga");
+let botoesMatarTreino = document.querySelectorAll(".matarTreino");
+let exerciciosAccordionBody = document.querySelectorAll(".accordion-body");
+let botoesAcordionTreino = document.querySelectorAll(".accordionExercicio");
+let novoPeso = document.querySelectorAll(".novoPeso");
+let botoesDeixarFim = document.querySelectorAll(".deixarFim");
 
 
 var currentDate = new Date();
@@ -110,6 +111,22 @@ var hours = currentDate.getHours();
 var minutes = currentDate.getMinutes();
 var seconds = currentDate.getSeconds();
 var dataAtual = [day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + ':' + seconds];
+
+
+//Essa parte é a estrutura pra começar a converter o botão de salvar pra transformar o for lá debaixo em um forEeach
+// botoesSalvarCarga.forEach( (elementoClickado)=> {
+//     elementoClickado.addEventListener("click", (eventoClickado) => {
+//         console.log(eventoClickado)
+//     })
+// });
+
+// function acoesBotoes(operacaoBotao){
+//     if(operacaoBotao === "Salvar"){
+//         console.log("Salvar")
+//     } else {
+//         console.log("outros botoes")
+//     }
+// };
 
 
 //Salvar carga = Atualiza o array do peso, marca o exercicio como executado, adiciona borda verde no accordion, abre o próximo accordion e dá focus na carga do próximo exercício
